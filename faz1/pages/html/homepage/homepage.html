@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -523,4 +524,531 @@
         });
     </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilito - صفحه فرود</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Vazir', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0066cc;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            color: #0066cc;
+        }
+
+        .hero {
+            background-image: url('https://via.placeholder.com/1200x600');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .search-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            justify-content: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .tabs label {
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .tabs input[type="radio"] {
+            display: none;
+        }
+
+        .tabs input[type="radio"]:checked + label {
+            background-color: #0066cc;
+            color: #fff;
+        }
+
+        .tabs label:hover {
+            background-color: #e0e0e0;
+        }
+
+        .search-form input,
+        .search-form select {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+        }
+
+        .search-form button {
+            padding: 10px 20px;
+            background-color: #0066cc;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .search-form button:hover {
+            background-color: #004d99;
+        }
+
+        .features {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .feature-cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .feature-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+        }
+
+        .feature-card img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #e0e0e0;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .card img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .flights {
+            padding: 40px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .flights h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .flight-cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .flight-card {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: right;
+        }
+
+        .flight-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .flight-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .flight-card p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .flight-card button {
+            padding: 10px 20px;
+            background-color: #0066cc;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .flight-card button:hover {
+            background-color: #004d99;
+        }
+
+        .faq {
+            padding: 40px;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+
+        .faq h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .faq-item {
+            background-color: #fff;
+            margin: 10px auto;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f9f9f9;
+        }
+
+        .faq-question:hover {
+            background-color: #e6f0ff;
+        }
+
+        .faq-answer {
+            padding: 15px;
+            font-size: 16px;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 24px;
+            color: #0066cc;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '−';
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .social-links a:hover {
+            color: #0066cc;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: 400px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .search-form input,
+            .search-form select {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature-card,
+            .flight-card,
+            .faq-item,
+            .card {
+                width: 100%;
+            }
+
+            .card {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Bilito</div>
+        <nav>
+            <ul>
+                <li><a href="#">پرواز داخلی</a></li>
+                <li><a href="#">پرواز خارجی</a></li>
+                <li><a href="#">پشتیبانی</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>پرواز خود را با بیلتو رزرو کنید</h1>
+            <form class="search-form">
+                <div class="tabs">
+                    <input type="radio" id="domestic" name="flight-type" checked>
+                    <label for="domestic">پرواز داخلی</label>
+                    <input type="radio" id="international" name="flight-type">
+                    <label for="international">پرواز خارجی</label>
+                </div>
+                <input type="text" placeholder="مبدا" required>
+                <input type="text" placeholder="مقصد" required>
+                <input type="date" placeholder="تاریخ رفت" required>
+                <select>
+                    <option>تعداد مسافر</option>
+                    <option>1 مسافر</option>
+                    <option>2 مسافر</option>
+                    <option>3+ مسافر</option>
+                </select>
+                <button type="submit">جستجو</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2>چرا بیلتو؟</h2>
+        <div class="feature-cards">
+            <div class="feature-card">
+                <img src="https://via.placeholder.com/50" alt="پشتیبانی">
+                <h3>پشتیبانی 24/7</h3>
+                <p>تیم ما همیشه آماده کمک به شماست.</p>
+            </div>
+            <div class="feature-card">
+                <img src="https://via.placeholder.com/50" alt="قیمت">
+                <h3>قیمت‌های مناسب</h3>
+                <p>بهترین قیمت‌ها برای پروازهای شما.</p>
+            </div>
+            <div class="feature-card">
+                <img src="https://via.placeholder.com/50" alt="رزرو آسان">
+                <h3>رزرو آسان</h3>
+                <p>در چند کلیک پرواز خود را رزرو کنید.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="card-container">
+        <div class="card">
+            <img src="https://via.placeholder.com/50" alt="ایکن">
+            <p>سمینارهای آموزشی</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/50" alt="ایکن">
+            <p>نمایشگاه‌های تخصصی</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/50" alt="ایکن">
+            <p>سمینارهای آموزشی</p>
+        </div>
+    </div>
+
+    <section class="flights">
+        <h2>مقصد های پر طرفدار</h2>
+        <div class="flight-cards">
+            <div class="flight-card">
+                <img src="https://via.placeholder.com/300x150" alt="پرواز تهران به دبی">
+                <h3>تهران به دبی</h3>
+                <p>شروع از ۵,۰۰۰,۰۰۰ تومان</p>
+                <button>رزرو کنید</button>
+            </div>
+            <div class="flight-card">
+                <img src="https://via.placeholder.com/300x150" alt="پرواز تهران به استانبول">
+                <h3>تهران به استانبول</h3>
+                <p>شروع از ۴,۵۰۰,۰۰۰ تومان</p>
+                <button>رزرو کنید</button>
+            </div>
+            <div class="flight-card">
+                <img src="https://via.placeholder.com/300x150" alt="پرواز تهران به استانبول">
+                <h3>تهران به استانبول</h3>
+                <p>شروع از ۴,۵۰۰,۰۰۰ تومان</p>
+                <button>رزرو کنید</button>
+            </div>
+            <div class="flight-card">
+                <img src="https://via.placeholder.com/300x150" alt="پرواز تهران به استانبول">
+                <h3>تهران به استانبول</h3>
+                <p>شروع از ۴,۵۰۰,۰۰۰ تومان</p>
+                <button>رزرو کنید</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <h2>سوالات متداول</h2>
+        <div class="faq-item">
+            <div class="faq-question">چگونه می‌توانم پرواز خود را رزرو کنم؟</div>
+            <div class="faq-answer">
+                <p>برای رزرو پرواز، کافی است مبدا، مقصد، تاریخ سفر و تعداد مسافران را در فرم جستجو وارد کنید و سپس گزینه‌های موجود را انتخاب کنید.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">آیا امکان کنسل کردن بلیط وجود دارد؟</div>
+            <div class="faq-answer">
+                <p>بله، بسته به قوانین بلیط و شرکت هواپیمایی، می‌توانید بلیط خود را کنسل کنید. برای جزئیات بیشتر با پشتیبانی تماس بگیرید.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">چگونه می‌توانم با پشتیبانی تماس بگیرم؟</div>
+            <div class="faq-answer">
+                <p>می‌توانید از طریق ایمیل info@bilito.com یا شماره 021-12345678 با ما تماس بگیرید.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>تماس با ما: info@bilito.com | 021-12345678</p>
+        <div class="social-links">
+            <a href="#">توییتر</a>
+            <a href="#">اینستاگرام</a>
+            <a href="#">لینکدین</a>
+        </div>
+        <p>© 2025 Bilito. تمامی حقوق محفوظ است.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const faqItem = item.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+>>>>>>> master
 </html>
