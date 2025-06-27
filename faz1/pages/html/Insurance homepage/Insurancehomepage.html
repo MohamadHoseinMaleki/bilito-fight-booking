@@ -43,6 +43,25 @@
             font-size: 0.875rem; /* text-sm */
             border-radius: 0.5rem; /* rounded-lg */
         }
+
+        /* کلاس سفارشی برای سایه پیچیده باکس جستجو */
+        .search-box-shadow {
+            box-shadow: 0px 16px 6px rgba(0, 0, 0, 0.01), 0px 9px 5px rgba(0, 0, 0, 0.05), 0px 4px 4px rgba(0, 0, 0, 0.09), 0px 1px 2px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-content { display: none; transition: all 0.3s ease-in-out; }
+        .faq-item .icon-minus { display: none; }
+        .faq-item.open .icon-minus { display: block; }
+        .faq-item.open .icon-plus { display: none; }
+        .placeholder-img {
+            background-color: #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #718096;
+            font-size: 0.875rem;
+            border-radius: 0.5rem;
+        }
     </style>
     <script>
         // کانفیگ رنگ های اصلی سایت برای TailwindCSS
@@ -126,10 +145,48 @@
 </header>
 
 <main>
-    <!-- ===== بخش تصویر Hero صفحه بیمه (جدید) ===== -->
-    <section class="insurance-hero-bg">
-        <!-- این بخش برای نمایش تصویر پس‌زمینه است و محتوای داخلی ندارد -->
-        <!--        <img src="../../pictuers/STATE=Insurance,%20Device=web,%20SIZE=340.HOME%20PAGE.png" alt="Insurance">-->
+    <!-- ===== بخش تصویر Hero (با باکس جستجو) ===== -->
+    <section class="insurance-hero-bg relative">
+
+        <!-- ===== باکس جستجو ===== -->
+        <div class="absolute bottom-[-44px] left-1/2 -translate-x-1/2 w-full max-w-[1205px] h-[88px] bg-white border border-[#EDEDED] rounded-lg search-box-shadow p-6 flex items-center">
+            <div class="grid grid-cols-4 gap-x-4 w-full">
+
+                <!-- فیلد ۱: کشور مقصد -->
+                <div class="relative">
+                    <label class="absolute -top-2 right-3 text-xs text-gray-500">کشور مقصد</label>
+                    <div class="flex items-center border border-gray-300 rounded-lg p-2.5 h-[52px]">
+                        <input type="text" value="استانبول" class="w-full bg-transparent focus:outline-none pt-2 font-semibold text-gray-800">
+                    </div>
+                </div>
+
+                <!-- فیلد ۲: مدت سفر -->
+                <div class="relative">
+                    <label class="absolute -top-2 right-3 text-xs text-gray-500">مدت سفر</label>
+                    <div class="flex items-center border border-gray-300 rounded-lg p-2.5 h-[52px]">
+                        <input type="text" value="۵ تا ۸ روز" class="w-full bg-transparent focus:outline-none pt-2 font-semibold text-gray-800">
+                    </div>
+                </div>
+
+                <!-- فیلد ۳: مسافران -->
+                <div class="relative">
+                    <label class="absolute -top-2 right-3 text-xs text-gray-500">مسافران</label>
+                    <div class="flex items-center border border-gray-300 rounded-lg p-2.5 h-[52px]">
+                        <input type="text" value="۱ مسافر" class="w-full bg-transparent focus:outline-none pt-2 font-semibold text-gray-800">
+                    </div>
+                </div>
+
+                <!-- دکمه جستجو -->
+                <div>
+                    <button class="bg-[#1D91CC] text-white w-full h-[52px] rounded-lg flex items-center justify-center gap-x-2 font-bold hover:bg-[#1982b6] transition-colors">
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" /></svg>
+                        <span>جستجو</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
     </section>
 
     <!-- ===== بخش چرا بیلیتو ===== -->
