@@ -62,6 +62,16 @@
             font-size: 0.875rem;
             border-radius: 0.5rem;
         }
+
+        /* کلاس سفارشی برای کانتینر جدول */
+        .table-frame-container {
+            background: #E8F4FA; /* Primary/tint 1 */
+            border-radius: 8px;
+        }
+
+        .faq-content, .faq-item .icon-minus { display: none; }
+        .faq-item.open .faq-content, .faq-item.open .icon-minus { display: block; }
+        .faq-item.open .icon-plus { display: none; }
     </style>
     <script>
         // کانفیگ رنگ های اصلی سایت برای TailwindCSS
@@ -266,6 +276,51 @@
             </div>
         </div>
     </section>
+
+    <!-- ===== بخش جدول محاسبه (با کلاس سفارشی) ===== -->
+    <section class="pt-0 pb-0 mt-[-64px]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="bg-[#E8F4FA] rounded-lg flex flex-col md:flex-row items-center overflow-hidden">
+
+                <!-- ستون تصویر -->
+                <div class="p-0 md:p-0 md:order-1">
+                    <img src="../../pictuers/Passport.png" alt="پاسپورت و هواپیما" >
+                </div>
+
+                <!-- جدول -->
+                <div class="flex-1 p-6 md:p-8 w-full">
+                    <table class="w-full text-center border border-gray-400/30">
+                        <thead class="bg-[#D0E9F5]">
+                        <tr>
+                            <th class="p-4 font-bold text-gray-800 text-lg border border-gray-400/30 whitespace-nowrap">عوامل موثر در تعیین قیمت</th>
+                            <th class="p-4 font-bold text-gray-800 text-lg border border-gray-400/30 whitespace-nowrap">نحوه محاسبه در فرمول تعیین حق بیمه</th>
+                        </tr>
+                        </thead>
+                        <tbody class="text-gray-700">
+                        <tr>
+                            <td class="p-4 font-semibold border border-gray-400/30 align-middle whitespace-nowrap">سن مسافر</td>
+                            <td class="p-4 border border-gray-400/30 align-middle whitespace-nowrap">تا ۱۲ سال / ۱۳ تا ۶۵ سال / ۶۶ تا ۷۰ سال / ۷۱ تا ۷۵ سال / ۷۶ تا ۸۰ سال</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-semibold border border-gray-400/30 align-middle whitespace-nowrap">مدت سفر</td>
+                            <td class="p-4 border border-gray-400/30 align-middle whitespace-nowrap">۱ تا ۷ روز / ۸ تا ۱۵ روز / ۱۶ تا ۲۳ روز / ۲۴ تا ۳۱ روز / ۳۲ تا ۴۵ روز / ۶۳ تا ۹۲ روز / ۶ ماهه / ۱ ساله</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-semibold border border-gray-400/30 align-middle whitespace-nowrap">مقصد سفر</td>
+                            <td class="p-4 border border-gray-400/30 align-middle whitespace-nowrap">بر اساس مناطق جغرافیایی مختلف</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
 
     <!-- ===== سوالات متداول ===== -->
     <section class="max-w-4xl mx-auto px-6 py-10">
