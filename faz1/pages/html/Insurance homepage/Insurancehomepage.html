@@ -1,124 +1,404 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>بیلیتو - رزرو بلیط هواپیما</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>بیمه مسافرتی | بیلیتو</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap" rel="stylesheet" />
     <style>
         body {
-            font-family: sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f2f2f2;
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: #FFFFFF;
+            color: #1C1C1C;
         }
-        header, footer {
-            background-color: #fff;
-            padding: 20px;
-            text-align: center;
+        .faq-content {
+            display: none;
+            transition: all 0.3s ease-in-out;
         }
-        nav {
+        .faq-item .icon-minus {
+            display: none;
+        }
+        .faq-item.open .icon-minus {
+            display: block;
+        }
+        .faq-item.open .icon-plus {
+            display: none;
+        }
+        /* کلاس برای پس زمینه عکس اصلی */
+        .hero-bg {
+            /* <-- آدرس عکس پس‌زمینه اصلی را اینجا قرار دهید */
+            background-image: url('https://images.unsplash.com/photo-1500835556837-99ac94a94552?q=80&w=1887&auto=format&fit=crop');
+        }
+        /* کلاس برای نمایش بهتر جای عکس ها */
+        .placeholder-img {
+            background-color: #e2e8f0; /* bg-gray-300 */
             display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            padding: 10px 20px;
-            background-color: #e6e6e6;
-        }
-        .hero {
-            background-color: #ccc;
-            height: 200px;
-            display: flex;
-            align-items: center;
             justify-content: center;
-        }
-        .search-form {
-            background-color: #fff;
-            padding: 20px;
-            margin: 20px;
-        }
-        .search-form input, .search-form select, .search-form button {
-            margin: 5px;
-            padding: 10px;
-        }
-        section {
-            background-color: #fff;
-            margin: 20px;
-            padding: 20px;
-        }
-        footer {
-            margin-top: 20px;
+            align-items: center;
+            color: #718096; /* text-gray-500 */
+            font-size: 0.875rem; /* text-sm */
+            border-radius: 0.5rem; /* rounded-lg */
         }
     </style>
+    <script>
+        // کانفیگ رنگ های اصلی سایت برای TailwindCSS
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-blue': '#2979FF',
+                        'brand-blue-light': '#F3F7FF',
+                        'brand-gray-text': '#707070',
+                        'brand-dark': '#1C1C1C',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
+<body class="bg-white">
 
-<header>
-    <h1>بیلیتو</h1>
+<!-- ===== header ===== -->
+<header class="bg-white shadow-sm border-b border-gray-100">
+    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-24">
+
+            <!-- بخش راست: لوگو و منوها -->
+            <div class="flex items-center">
+
+                <!-- لوگوی شما که به صورت لینک عمل می‌کند -->
+                <!-- با کلیک روی این لینک به آدرسی که در href مشخص شده می‌رود -->
+                <a href="#" class="flex-shrink-0">
+                    <!-- تگ SVG حذف و این تگ img جایگزین شد -->
+                    <img src="../../pictuers/LOGO.png" alt="لوگوی بیلیتو" class="h-10 w-auto">
+                </a>
+
+                <!-- منوهای ناوبری (در موبایل پنهان می‌شود) -->
+                <nav class="hidden md:flex items-center space-x-8 space-x-reverse mr-8">
+                    <a href="#" class="text-[#1D91CC] font-bold border-b-2 border-[#1D91CC] pb-1 text-lg">صفحه اصلی</a>
+                    <a href="#" class="text-[#606060] hover:text-[#1D91CC] transition-colors text-lg">بیمه مسافرتی</a>
+                    <a href="#" class="text-[#606060] hover:text-[#1D91CC] transition-colors text-lg">سفرهای من</a>
+                    <a href="#" class="flex items-center text-[#606060] hover:text-[#1D91CC] transition-colors text-lg">
+                        <span>سایر موارد</span>
+                        <svg class="w-5 h-5 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- بخش چپ: پشتیبانی و ورود (بدون تغییر) -->
+            <div class="flex items-center">
+                <div class="hidden lg:flex items-center space-x-6 space-x-reverse">
+                    <!-- پشتیبانی -->
+                    <div class="flex items-center text-[#606060]">
+                        <span>۰۲۱_۴۰۴۵ پشتیبانی</span>
+                        <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 6.75z" />
+                        </svg>
+                    </div>
+
+                    <!-- دکمه ورود/ثبت‌نام -->
+                    <a href="#" class="bg-[#1D91CC] text-white px-5 py-2.5 rounded-lg flex items-center gap-x-2 font-semibold hover:bg-[#1982b6] transition-colors">
+                        <span>ورود/ ثبت نام</span>
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- منوی همبرگری برای موبایل -->
+                <div class="flex md:hidden">
+                    <button type="button" class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </header>
 
-<nav>
-    <div>صفحه اصلی | بیمه مسافرتی | سفرهای من | سایر موارد</div>
-    <div>ورود / ثبت نام | پشتیبانی: 021-4045</div>
-</nav>
+<main>
+    <!-- ===== بخش Hero و جستجو ===== -->
+    <section class="relative hero-bg bg-cover bg-center text-white py-16 md:py-24">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative max-w-5xl mx-auto px-4 text-center">
+            <h1 class="text-3xl md:text-5xl font-extrabold mb-3">بیمه مسافرتی بیلیتو</h1>
+            <p class="text-lg md:text-xl font-light mb-8">با آرامش خاطر به هر کجای دنیا سفر کنید</p>
 
-<div class="hero">
-    <h2>بنر تبلیغاتی</h2>
-</div>
+            <div class="bg-white/95 backdrop-blur-sm p-4 shadow-lg rounded-xl grid grid-cols-1 md:grid-cols-4 gap-4 text-sm text-right text-brand-dark">
+                <!-- کشور مقصد -->
+                <div>
+                    <label class="block text-gray-500 mb-2 font-medium">کشور مقصد</label>
+                    <div class="flex items-center border border-gray-300 bg-white p-2.5 rounded-lg">
+                        <svg class="w-5 h-5 text-gray-400 me-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" /></svg>
+                        <input type="text" value="استانبول" class="w-full focus:outline-none bg-transparent">
+                    </div>
+                </div>
+                <!-- مدت سفر -->
+                <div>
+                    <label class="block text-gray-500 mb-2 font-medium">مدت سفر</label>
+                    <div class="flex items-center border border-gray-300 bg-white p-2.5 rounded-lg">
+                        <svg class="w-5 h-5 text-gray-400 me-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0h18" /></svg>
+                        <input type="text" value="۵ تا ۸ روز" class="w-full focus:outline-none bg-transparent">
+                    </div>
+                </div>
+                <!-- مسافران -->
+                <div>
+                    <label class="block text-gray-500 mb-2 font-medium">مسافران</label>
+                    <div class="flex items-center border border-gray-300 bg-white p-2.5 rounded-lg">
+                        <svg class="w-5 h-5 text-gray-400 me-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m-7.512 2.72a9.094 9.094 0 0 1 3.741-.479 3 3 0 0 1-4.682-2.72M13.5 3A3.375 3.375 0 0 0 10.125 6.375 3.375 3.375 0 0 0 13.5 9.75c1.55 0 2.958-.859 3.375-2.175A3.375 3.375 0 0 0 13.5 3Zm-7.5 3A3.375 3.375 0 0 0 2.625 6.375 3.375 3.375 0 0 0 6 9.75c1.55 0 2.958-.859 3.375-2.175A3.375 3.375 0 0 0 6 3Z" /></svg>
+                        <input type="text" value="۱ مسافر" class="w-full focus:outline-none bg-transparent">
+                    </div>
+                </div>
+                <!-- دکمه جستجو -->
+                <div class="flex items-end mt-2 md:mt-0">
+                    <button class="bg-brand-blue hover:bg-blue-700 text-white w-full p-3 rounded-lg font-bold transition-colors h-[46px]">جستجو</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="search-form">
-    <form>
-        <input type="text" placeholder="کشور مقصد">
-        <select>
-            <option>مدت سفر</option>
-            <option>1 تا 7 روز</option>
-            <option>8 تا 15 روز</option>
-            <!-- سایر گزینه‌ها -->
-        </select>
-        <select>
-            <option>تعداد مسافران</option>
-            <option>1 مسافر</option>
-            <option>2 مسافر</option>
-            <!-- سایر گزینه‌ها -->
-        </select>
-        <button type="submit">جستجو</button>
-    </form>
-</div>
+    <!-- ===== بخش چرا بیلیتو ===== -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-12 text-brand-dark">چرا بیلیتو؟</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="flex flex-col items-center">
+                    <div class="bg-brand-blue-light p-4 rounded-full mb-4">
+                        <div class="h-10 w-10 placeholder-img">آیکن</div>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">پشتیبانی ۲۴ ساعته</h3>
+                    <p class="text-brand-gray-text text-sm">حتی در روزهای تعطیل</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="bg-brand-blue-light p-4 rounded-full mb-4">
+                        <div class="h-10 w-10 placeholder-img">آیکن</div>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">استرداد آنلاین بلیط</h3>
+                    <p class="text-brand-gray-text text-sm">کنسلی و استرداد سریع</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="bg-brand-blue-light p-4 rounded-full mb-4">
+                        <div class="h-10 w-10 placeholder-img">آیکن</div>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">تقویم قیمتی</h3>
+                    <p class="text-brand-gray-text text-sm">مقایسه قیمت در روزهای مختلف</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="bg-brand-blue-light p-4 rounded-full mb-4">
+                        <div class="h-10 w-10 placeholder-img">آیکن</div>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">اطلاع از آخرین قیمت‌ها</h3>
+                    <p class="text-brand-gray-text text-sm">با ابزارک «خبرم کن»</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section>
-    <h2>بیمه مسافرتی چیست؟</h2>
-    <p>توضیحاتی درباره بیمه مسافرتی...</p>
-</section>
+    <!-- ===== بخش توضیحات بیمه ===== -->
+    <section class="max-w-5xl mx-auto px-6 py-10">
+        <h2 class="text-2xl font-bold mb-4">بیمه مسافرتی چیست؟</h2>
+        <div class="space-y-4 text-justify leading-loose text-brand-gray-text">
+            <p>بیمه مسافرتی (Travel Insurance) یک نوع بیمه است که برای پوشش هزینه‌ها و خسارات مرتبط با سفرهای بین‌المللی یا داخلی ارائه می‌شود. این بیمه معمولاً توسط شرکت‌های بیمه عرضه می‌شود و شامل تعدادی پوشش است که می‌تواند شامل پوشش هزینه‌های پزشکی اضطراری، پوشش لغو سفر، پوشش بیمه مسافرتی برای خسارت اموال، مسئولیت مدنی و پوشش تأخیرات و لغو پرواز باشد.</p>
+            <p>یکی از اصلی‌ترین پوشش‌های بیمه مسافرتی پوشش هزینه‌های پزشکی است. اگر در سفر به بیماری یا حادثه‌ای برخورد کنید و نیاز به درمان داشته باشید، بیمه مسافرتی ممکن است هزینه‌های مرتبط با ویزیت پزشک, بستری در بیمارستان، داروها و معالجه‌های دیگر را پوشش دهد.</p>
+        </div>
+    </section>
 
-<section>
-    <h2>خدمات بیمه مسافرتی</h2>
-    <ul>
-        <li>هزینه‌های پزشکی</li>
-        <li>هزینه‌های دندانپزشکی</li>
-        <li>جبران هزینه دارو</li>
-        <li>هزینه‌های بازگشت</li>
-        <li>جبران خسارت اموال</li>
-    </ul>
-</section>
+    <!-- ===== خدمات بیمه ===== -->
+    <section class="max-w-5xl mx-auto px-6 py-10">
+        <h2 class="text-2xl font-bold mb-4">خدمات بیمه مسافرتی</h2>
+        <div class="text-justify leading-loose text-brand-gray-text">
+            <p class="mb-6">خدمات بیمه مسافرتی شامل مجموعه‌ای از خدماتی هستند که توسط شرکت‌های بیمه به بیمه‌گزاران ارائه می‌شوند. این خدمات در ارتباط با موارد مختلفی از جمله پوشش‌ها، مشاوره‌ها و خدمات اضافی مرتبط با سفرها ارائه می‌شود. به طور کلی، خدمات بیمه مسافرتی عبارتند از:</p>
+            <ul class="space-y-4 text-justify">
+                <li class="flex items-start"><span class="text-brand-blue text-2xl me-3 mt-1">•</span><strong>هزینه‌های پزشکی:</strong> هزینه مراقبت پزشکی و بستری در بیمارستان برای درمان بیماری‌ها یا حوادث و صدمات مختلف.</li>
+                <li class="flex items-start"><span class="text-brand-blue text-2xl me-3 mt-1">•</span><strong>هزینه‌های دندانپزشکی:</strong> درمان ضروری برای درمان عفونت شدید، دندان درد، کشیدن دندان و...</li>
+                <li class="flex items-start"><span class="text-brand-blue text-2xl me-3 mt-1">•</span><strong>جبران هزینه دارو:</strong> در صورت مفقود شدن داروهای همراه مسافر (به شرط ضروری بودن مصرف آن‌ها) و ارسال مجدد داروهای مورد نیاز بیمه‌شده.</li>
+                <li class="flex items-start"><span class="text-brand-blue text-2xl me-3 mt-1">•</span><strong>هزینه‌های بازگشت:</strong> در صورت ابتلا به بیماری یا وقوع حادثه‌ای که بیش از 10 روز نیاز به بستری شدن در بیمارستان داشته باشد.</li>
+                <li class="flex items-start"><span class="text-brand-blue text-2xl me-3 mt-1">•</span><strong>جبران خسارت اموال:</strong> بیمه مسافرتی می‌تواند در صورت خسارت، سرقت یا از دست رفتن وسایل شخصی و اموال شما در سفر تأمین کند.</li>
+            </ul>
+        </div>
+    </section>
 
-<section>
-    <h2>مبلغ بیمه مسافرتی</h2>
-    <p>توضیحاتی درباره عوامل مؤثر بر قیمت بیمه...</p>
-</section>
+    <!-- ===== مبلغ بیمه و جدول ===== -->
+    <section class="max-w-5xl mx-auto px-6 py-10">
+        <h2 class="text-2xl font-bold mb-4">مبلغ بیمه مسافرتی</h2>
+        <div class="text-justify leading-loose text-brand-gray-text space-y-4">
+            <p>قیمت بیمه مسافرتی بر اساس عوامل متعددی تعیین می‌شود. در زیر به برخی از اصلی‌ترین عواملی که بر قیمت بیمه مسافرتی تأثیر می‌گذارند، اشاره شده است.</p>
+            <ul class="list-disc pr-5 space-y-2">
+                <li><strong>مقصد سفر:</strong> برخی مقاصد سفر به دلیل خطرات بیشتر، هزینه درمان بالاتر یا موارد دیگر، قیمت بیمه بیشتری دارند.</li>
+                <li><strong>مدت زمان سفر:</strong> معمولاً هرچه مدت زمان سفر بیشتر باشد، قیمت بیمه مسافرتی نیز بالاتر خواهد بود.</li>
+                <li><strong>سن و تعداد مسافران:</strong> در سنین بالا یا تعداد بیشتر، هزینه بیمه بیشتر می‌شود.</li>
+            </ul>
+        </div>
+        <div class="mt-8 overflow-x-auto">
+            <table class="w-full border border-gray-200 text-sm text-center rounded-lg shadow-sm">
+                <thead class="bg-gray-100">
+                <tr>
+                    <th class="border-b p-3 font-bold text-base">عوامل موثر در تعیین قیمت</th>
+                    <th class="border-b p-3 font-bold text-base">نحوه محاسبه در فرمول تعیین حق بیمه</th>
+                </tr>
+                </thead>
+                <tbody class="text-brand-gray-text">
+                <tr class="border-b border-gray-200">
+                    <td class="p-4">سن مسافر</td>
+                    <td class="p-4">تا ۱۲ سال / ۱۳ تا ۶۵ / ۶۶ تا ۷۰ / ۷۱ تا ۷۵ / ۷۶ تا ۸۰ سال</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                    <td class="p-4">مدت سفر</td>
+                    <td class="p-4">۱ تا ۷ روز / ۸ تا ۱۵ / ۱۶ تا ۲۳ / ۲۴ تا ۳۱ / ۳۲ تا ۴۵ / ۶۳ تا ۹۲ / ۶ ماهه / ۱ ساله</td>
+                </tr>
+                <tr>
+                    <td class="p-4">مقصد سفر</td>
+                    <td class="p-4">بر اساس مناطق جغرافیایی مختلف</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
 
-<section>
-    <h2>سوالات متداول</h2>
-    <ul>
-        <li>آیا بیمه مسافرتی پوششی برای خسارت به خودرو دارد؟</li>
-        <li>نرخ بلیط برای نوزادان چگونه است؟</li>
-        <li>آیا امکان استرداد بلیط وجود دارد؟</li>
-        <li>آیا امکان تغییر نام وجود دارد؟</li>
-    </ul>
-</section>
+    <!-- ===== سوالات متداول ===== -->
+    <section class="max-w-4xl mx-auto px-6 py-10">
+        <h2 class="text-2xl font-bold mb-8 text-center">سوالات متداول</h2>
+        <div class="space-y-4">
+            <!-- سوال 1 -->
+            <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+                <button class="faq-toggle w-full flex justify-between items-center p-5 text-right font-semibold text-lg">
+                    <span>آیا بیمه مسافرتی پوششی برای خسارت به خودرو در سفر نیز دارد؟</span>
+                    <div class="flex-shrink-0">
+                        <svg class="icon-plus w-6 h-6 text-brand-blue" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+                        <svg class="icon-minus w-6 h-6 text-brand-blue" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" /></svg>
+                    </div>
+                </button>
+                <div class="faq-content bg-gray-50 px-5 pb-5 text-brand-gray-text leading-relaxed">
+                    <p>خیر. بیمه مسافرتی معمولاً برای خسارات و مشکلات شخصی و اموال شماست و پوششی برای خسارت به خودرو ارائه نمی‌دهد. برای پوشش خسارات خودرو باید از بیمه بدنه یا بیمه‌های مخصوص خودرو استفاده کنید.</p>
+                </div>
+            </div>
+            <!-- سوال 2 -->
+            <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+                <button class="faq-toggle w-full flex justify-between items-center p-5 text-right font-semibold text-lg">
+                    <span>نرخ بلیط هواپیما برای نوزادان و کودکان زیر ۱۲ سال چگونه است؟</span>
+                    <div class="flex-shrink-0">
+                        <svg class="icon-plus w-6 h-6 text-brand-blue" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+                        <svg class="icon-minus w-6 h-6 text-brand-blue" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" /></svg>
+                    </div>
+                </button>
+                <div class="faq-content bg-gray-50 px-5 pb-5 text-brand-gray-text leading-relaxed">
+                    <p>معمولاً نرخ بلیط برای نوزادان (زیر ۲ سال) حدود ۱۰٪ از نرخ بلیط بزرگسال است و برای کودکان (۲ تا ۱۲ سال) بین ۵۰٪ تا ۷۵٪ نرخ بزرگسال محاسبه می‌شود. این مقادیر بسته به ایرلاین و کلاس پروازی متفاوت است.</p>
+                </div>
+            </div>
+            <!-- سوال 3 -->
+            <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+                <button class="faq-toggle w-full flex justify-between items-center p-5 text-right font-semibold text-lg">
+                    <span>آیا پس از خرید اینترنتی بلیط هواپیما امکان استرداد آن وجود دارد؟</span>
+                    <div class="flex-shrink-0">
+                        <svg class="icon-plus w-6 h-6 text-brand-blue" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+                        <svg class="icon-minus w-6 h-6 text-brand-blue" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" /></svg>
+                    </div>
+                </button>
+                <div class="faq-content bg-gray-50 px-5 pb-5 text-brand-gray-text leading-relaxed">
+                    <p>بله، در اکثر موارد امکان استرداد وجود دارد اما میزان جریمه کنسلی به کلاس پروازی و قوانین ایرلاین بستگی دارد. بلیط‌های چارتری معمولاً غیرقابل استرداد هستند.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer>
-    <p>اپلیکیشن بیلیتو | Apple Store | Play Store</p>
-    <p>لینک‌های مفید: درباره ما | تماس با ما | قوانین و مقررات</p>
-    <p>ایمیل: shiva.arghvni1996@gmail.com | تلفن پشتیبانی: 021-32765498</p>
+    <!-- ===== دانلود اپلیکیشن ===== -->
+    <section class="bg-brand-blue-light mt-10">
+        <div class="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+            <div class="text-center md:text-right">
+                <h2 class="text-3xl font-bold text-brand-dark mb-4">اپلیکیشن بیلیتو را دانلود کنید!</h2>
+                <p class="text-brand-gray-text mb-8 leading-relaxed">با نصب اپلیکیشن بیلیتو، به سادگی و در هر زمان و مکان، بلیط هواپیما و بیمه مسافرتی خود را خریداری کنید.</p>
+                <div class="flex justify-center md:justify-start gap-4">
+                    <!-- لینک و عکس اپ استورها -->
+                    <a href="#"><div class="h-14 w-36 placeholder-img">Google Play</div></a>
+                    <a href="#"><div class="h-14 w-36 placeholder-img">App Store</div></a>
+                    <a href="#"><div class="h-14 w-36 placeholder-img">Cafe Bazaar</div></a>
+                </div>
+            </div>
+            <div class="hidden md:flex justify-center">
+                <!-- عکس موبایل -->
+                <div class="h-80 w-64 placeholder-img">عکس موبایل</div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- ===== فوتر ===== -->
+<footer class="bg-gray-800 text-white pt-16 pb-6">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+            <!-- ستون اول: درباره ما و لوگو -->
+            <div class="space-y-4 lg:col-span-1">
+                <div class="h-12 w-32 placeholder-img bg-gray-500 text-white">لوگو سفید</div>
+                <p class="text-sm text-gray-300 leading-relaxed">
+                    بیلیتو بستری برای خرید آنلاین بلیط هواپیما و بیمه مسافرتی است که با پشتیبانی ۲۴ ساعته، تجربه‌ای امن و راحت از خرید را برای شما فراهم می‌کند.
+                </p>
+            </div>
+            <!-- ستون دوم: لینک‌های مفید -->
+            <div>
+                <h3 class="font-bold text-lg mb-4">لینک‌های مفید</h3>
+                <ul class="space-y-3 text-sm text-gray-300">
+                    <li><a href="#" class="hover:text-white transition-colors">درباره ما</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">تماس با ما</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">استرداد بلیط</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">راهنمای خرید</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">قوانین و مقررات</a></li>
+                </ul>
+            </div>
+            <!-- ستون سوم: اطلاعات تماس -->
+            <div>
+                <h3 class="font-bold text-lg mb-4">اطلاعات تماس</h3>
+                <ul class="space-y-3 text-sm text-gray-300">
+                    <li class="flex items-start"><span class="me-2 mt-1">•</span>تلفن پشتیبانی: ۰۲۱-۳۲۷۶۵۴۹۸</li>
+                    <li class="flex items-start"><span class="me-2 mt-1">•</span>ایمیل: info@bilito.com</li>
+                    <li class="flex items-start"><span class="me-2 mt-1">•</span>آدرس: تهران، میدان آزادی، خیابان آزادی، پلاک ۱۲۳</li>
+                </ul>
+            </div>
+            <!-- ستون چهارم: نمادهای اعتماد -->
+            <div>
+                <h3 class="font-bold text-lg mb-4">نمادهای اعتماد</h3>
+                <div class="flex gap-4">
+                    <div class="h-24 w-24 placeholder-img bg-white text-gray-600">نماد</div>
+                    <div class="h-24 w-24 placeholder-img bg-white text-gray-600">نماد</div>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-10 pt-6 text-center text-xs text-gray-400">
+            <p>کلیه حقوق این سایت محفوظ و متعلق به شرکت بیلیتو می‌باشد.</p>
+        </div>
+    </div>
 </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+
+        faqToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const faqItem = toggle.parentElement;
+                const content = toggle.nextElementSibling;
+                const isOpen = faqItem.classList.contains('open');
+
+                // بستن تمام آیتم‌های باز
+                document.querySelectorAll('.faq-item.open').forEach(openItem => {
+                    openItem.classList.remove('open');
+                    openItem.querySelector('.faq-content').style.display = 'none';
+                });
+
+                // اگر آیتم کلیک شده، قبلا باز نبوده، آن را باز کن
+                if (!isOpen) {
+                    faqItem.classList.add('open');
+                    content.style.display = 'block';
+                }
+            });
+        });
+    });
+</script>
 
 </body>
 </html>
