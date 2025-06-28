@@ -6,53 +6,23 @@
     <title>بیمه مسافرتی | بیلیتو</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap" rel="stylesheet" />
+
+    <!-- ===== CSS تمیز و نهایی ===== -->
     <style>
         body {
             font-family: 'Vazirmatn', sans-serif;
             background-color: #FFFFFF;
             color: #1C1C1C;
         }
-        /* --- CSS جدید برای تصویر هیرو صفحه بیمه --- */
         .insurance-hero-bg {
-            /* آدرس عکس شما در اینجا قرار گرفته است */
             background-image: url('../../pictuers/STATE=Insurance, Device=web, SIZE=340.HOME PAGE.png');
-            height: 360px; /* ارتفاع بر اساس نام فایل و طراحی */
+            height: 360px;
             background-size: cover;
             background-position: center;
         }
-
-        .faq-content {
-            display: none;
-            transition: all 0.3s ease-in-out;
-        }
-        .faq-item .icon-minus {
-            display: none;
-        }
-        .faq-item.open .icon-minus {
-            display: block;
-        }
-        .faq-item.open .icon-plus {
-            display: none;
-        }
-        .placeholder-img {
-            background-color: #e2e8f0; /* bg-gray-300 */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #718096; /* text-gray-500 */
-            font-size: 0.875rem; /* text-sm */
-            border-radius: 0.5rem; /* rounded-lg */
-        }
-
-        /* کلاس سفارشی برای سایه پیچیده باکس جستجو */
         .search-box-shadow {
             box-shadow: 0px 16px 6px rgba(0, 0, 0, 0.01), 0px 9px 5px rgba(0, 0, 0, 0.05), 0px 4px 4px rgba(0, 0, 0, 0.09), 0px 1px 2px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
         }
-
-        .faq-content { display: none; transition: all 0.3s ease-in-out; }
-        .faq-item .icon-minus { display: none; }
-        .faq-item.open .icon-minus { display: block; }
-        .faq-item.open .icon-plus { display: none; }
         .placeholder-img {
             background-color: #e2e8f0;
             display: flex;
@@ -63,31 +33,47 @@
             border-radius: 0.5rem;
         }
 
-        /* کلاس سفارشی برای کانتینر جدول */
-        .table-frame-container {
-            background: #E8F4FA; /* Primary/tint 1 */
-            border-radius: 8px;
+        /* --- استایل‌های نهایی و کامل برای بخش سوالات متداول (FAQ) --- */
+
+        /* 1. استایل پایه برای پنل پاسخ */
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
         }
 
-        .faq-content, .faq-item .icon-minus { display: none; }
-        .faq-item.open .faq-content, .faq-item.open .icon-minus { display: block; }
-        .faq-item.open .icon-plus { display: none; }
-    </style>
-    <script>
-        // کانفیگ رنگ های اصلی سایت برای TailwindCSS
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'brand-blue': '#2979FF',
-                        'brand-blue-light': '#F3F7FF',
-                        'brand-gray-text': '#707070',
-                        'brand-dark': '#1C1C1C',
-                    }
-                }
-            }
+        /* 2. استایل پایه برای آیکن‌ها (حالت بسته) */
+        .faq-item .icon-up {
+            opacity: 0;
+            transform: rotate(-180deg);
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
         }
-    </script>
+        .faq-item .icon-down {
+            opacity: 1;
+            transform: rotate(0deg);
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        /* --- استایل‌های حالت باز (زمانی که کلاس .open اضافه می‌شود) --- */
+
+        /* 3. تغییر رنگ و اندازه فونت متن سوال */
+        .faq-item.open .faq-toggle span {
+            color: #1D91CC; /* رنگ آبی برند شما */
+            font-size: 1.05rem; /* کمی کوچک‌تر از حالت عادی */
+            transition: font-size 0.2s, color 0.2s; /* انیمیشن نرم */
+        }
+
+        /* 4. تعویض و رنگی کردن آیکن‌ها */
+        .faq-item.open .icon-up {
+            opacity: 1;
+            transform: rotate(0deg);
+            color: #1D91CC;
+        }
+        .faq-item.open .icon-down {
+            opacity: 0;
+            transform: rotate(180deg);
+        }
+    </style>
 </head>
 <body class="bg-white">
 
@@ -200,7 +186,6 @@
     </section>
 
     <!-- ===== بخش توضیحات بیمه مسافرتی ===== -->
-    <!-- pt-28 برای ایجاد فاصله کافی از باکس جستجو که روی تصویر است -->
     <section class="pt-28 pb-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-right">
             <!-- عنوان بخش -->
@@ -318,75 +303,124 @@
         </div>
     </section>
 
+    <!-- ===== بخش سوالات متداول (FAQ) ===== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <!-- عنوان بخش -->
+        <h2 class="text-3xl font-bold mb-8 text-right text-gray-800">سوالات متداول</h2>
 
+        <!-- کانتینر برای همه آیتم‌های سوالات -->
+        <div class="space-y-1" id="faq-container">
 
-
-
-    <!-- ===== سوالات متداول ===== -->
-    <section class="max-w-4xl mx-auto px-6 py-10">
-        <h2 class="text-2xl font-bold mb-8 text-center">سوالات متداول</h2>
-        <div class="space-y-4">
-            <!-- سوال 1 -->
-            <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
-                <button class="faq-toggle w-full flex justify-between items-center p-5 text-right font-semibold text-lg">
-                    <span>آیا بیمه مسافرتی پوششی برای خسارت به خودرو در سفر نیز دارد؟</span>
-                    <div class="flex-shrink-0">
-                        <svg class="icon-plus w-6 h-6 text-brand-blue" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
-                        <svg class="icon-minus w-6 h-6 text-brand-blue" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" /></svg>
+            <!-- آیتم سوال ۱ -->
+            <div class="faq-item border-b border-gray-200">
+                <button class="faq-toggle flex justify-between items-center w-full py-5 text-right">
+                    <span class="font-semibold text-lg text-gray-800">آیا بیمه مسافرتی پوششی برای خسارت به خودرو در سفر نیز دارد؟</span>
+                    <!-- آیکن‌ها -->
+                    <div class="relative w-6 h-6">
+                        <svg class="icon-up absolute w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+                        </svg>
+                        <svg class="icon-down absolute w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
                     </div>
                 </button>
-                <div class="faq-content bg-gray-50 px-5 pb-5 text-brand-gray-text leading-relaxed">
-                    <p>خیر. بیمه مسافرتی معمولاً برای خسارات و مشکلات شخصی و اموال شماست و پوششی برای خسارت به خودرو ارائه نمی‌دهد. برای پوشش خسارات خودرو باید از بیمه بدنه یا بیمه‌های مخصوص خودرو استفاده کنید.</p>
+                <div class="faq-content overflow-hidden">
+                    <p class="pt-2 pb-5 px-1 text-gray-600 leading-relaxed">
+                        بیمه مسافرتی عموماً پوششی برای خسارت به خودرو در سفر ندارد. بیمه مسافرتی معمولاً برای خسارات و مشکلات شخصی خودتان و اموال شما در سفر فراهم می‌کند، اما پوشش خودرو در بیمه مسافرتی به صورت معمول وجود ندارد.
+                    </p>
                 </div>
             </div>
-            <!-- سوال 2 -->
-            <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
-                <button class="faq-toggle w-full flex justify-between items-center p-5 text-right font-semibold text-lg">
-                    <span>نرخ بلیط هواپیما برای نوزادان و کودکان زیر ۱۲ سال چگونه است؟</span>
-                    <div class="flex-shrink-0">
-                        <svg class="icon-plus w-6 h-6 text-brand-blue" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
-                        <svg class="icon-minus w-6 h-6 text-brand-blue" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" /></svg>
+
+            <!-- آیتم سوال ۲ -->
+            <div class="faq-item border-b border-gray-200">
+                <button class="faq-toggle flex justify-between items-center w-full py-5 text-right">
+                    <span class="font-semibold text-lg text-gray-800">نرخ بلیط هواپیما برای نوزادان و کودکان زیر ۱۲ سال چگونه است؟</span>
+                    <div class="relative w-6 h-6">
+                        <svg class="icon-up absolute w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" /></svg>
+                        <svg class="icon-down absolute w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
                     </div>
                 </button>
-                <div class="faq-content bg-gray-50 px-5 pb-5 text-brand-gray-text leading-relaxed">
-                    <p>معمولاً نرخ بلیط برای نوزادان (زیر ۲ سال) حدود ۱۰٪ از نرخ بلیط بزرگسال است و برای کودکان (۲ تا ۱۲ سال) بین ۵۰٪ تا ۷۵٪ نرخ بزرگسال محاسبه می‌شود. این مقادیر بسته به ایرلاین و کلاس پروازی متفاوت است.</p>
+                <div class="faq-content overflow-hidden">
+                    <p class="pt-2 pb-5 px-1 text-gray-600 leading-relaxed">معمولاً نرخ بلیط برای نوزادان (زیر ۲ سال) درصدی از بلیط بزرگسال است و برای کودکان (۲ تا ۱۲ سال) نیز تخفیف ویژه‌ای در نظر گرفته می‌شود که بسته به ایرلاین متفاوت است.</p>
                 </div>
             </div>
-            <!-- سوال 3 -->
-            <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
-                <button class="faq-toggle w-full flex justify-between items-center p-5 text-right font-semibold text-lg">
-                    <span>آیا پس از خرید اینترنتی بلیط هواپیما امکان استرداد آن وجود دارد؟</span>
-                    <div class="flex-shrink-0">
-                        <svg class="icon-plus w-6 h-6 text-brand-blue" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
-                        <svg class="icon-minus w-6 h-6 text-brand-blue" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" /></svg>
+
+            <!-- آیتم سوال ۳ -->
+            <div class="faq-item border-b border-gray-200">
+                <button class="faq-toggle flex justify-between items-center w-full py-5 text-right">
+                    <span class="font-semibold text-lg text-gray-800">آیا پس از خرید اینترنتی بلیط هواپیما امکان استرداد آن وجود دارد؟</span>
+                    <div class="relative w-6 h-6">
+                        <svg class="icon-up absolute w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" /></svg>
+                        <svg class="icon-down absolute w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
                     </div>
                 </button>
-                <div class="faq-content bg-gray-50 px-5 pb-5 text-brand-gray-text leading-relaxed">
-                    <p>بله، در اکثر موارد امکان استرداد وجود دارد اما میزان جریمه کنسلی به کلاس پروازی و قوانین ایرلاین بستگی دارد. بلیط‌های چارتری معمولاً غیرقابل استرداد هستند.</p>
+                <div class="faq-content overflow-hidden">
+                    <p class="pt-2 pb-5 px-1 text-gray-600 leading-relaxed">بله، امکان استرداد بلیط وجود دارد اما شرایط و میزان جریمه بستگی به قوانین ایرلاین و کلاس پروازی بلیط شما دارد.</p>
                 </div>
             </div>
+
+            <!-- آیتم سوال ۴ -->
+            <div class="faq-item border-b border-gray-200">
+                <button class="faq-toggle flex justify-between items-center w-full py-5 text-right">
+                    <span class="font-semibold text-lg text-gray-800">آیا پس از خرید بلیط هواپیما امکان تغییر نام یا نام خانوادگی وجود دارد؟</span>
+                    <div class="relative w-6 h-6">
+                        <svg class="icon-up absolute w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" /></svg>
+                        <svg class="icon-down absolute w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+                    </div>
+                </button>
+                <div class="faq-content overflow-hidden">
+                    <p class="pt-2 pb-5 px-1 text-gray-600 leading-relaxed">در صورتی که ۷۲ ساعت به مهلت بلیط باقی مانده باشد، این مورد قابل پیگیری و انجام است.</p>
+                </div>
+            </div>
+
+            <!-- آیتم سوال ۵ -->
+            <div class="faq-item border-b border-gray-200">
+                <button class="faq-toggle flex justify-between items-center w-full py-5 text-right">
+                    <span class="font-semibold text-lg text-gray-800">هنگامی که از سایت خرید بلیط هواپیما رزرو بلیط را انجام می‌دهیم امکان انتخاب صندلی مورد نظرمان وجود دارد؟</span>
+                    <div class="relative w-6 h-6">
+                        <svg class="icon-up absolute w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" /></svg>
+                        <svg class="icon-down absolute w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+                    </div>
+                </button>
+                <div class="faq-content overflow-hidden">
+                    <p class="pt-2 pb-5 px-1 text-gray-600 leading-relaxed">این مورد در پروازهای داخلی و خارجی متفاوت است ولی هنگام خرید بلیط شما میتوانید با توجه به سیاست های کشور این کار را انجام دهید.</p>
+                </div>
+            </div>
+
+            <!-- آیتم سوال ۶ -->
+            <div class="faq-item border-b border-gray-200">
+                <button class="faq-toggle flex justify-between items-center w-full py-5 text-right">
+                    <span class="font-semibold text-lg text-gray-800">بلیط پرواز چه کشورها ایرلاین‌هایی را می‌توانم‌ در سایت بیلیتو جستجو و خریداری کنم؟</span>
+                    <div class="relative w-6 h-6">
+                        <svg class="icon-up absolute w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" /></svg>
+                        <svg class="icon-down absolute w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+                    </div>
+                </button>
+                <div class="faq-content overflow-hidden">
+                    <p class="pt-2 pb-5 px-1 text-gray-600 leading-relaxed">با توجه به شرایط سیاسی کشور میتوانید این مورد را هنگام خرید مشاهده کنید به دلیل اینکه همیشه متغیر است.</p>
+                </div>
+            </div>
+
+            <!-- آیتم سوال ۷ -->
+            <div class="faq-item border-b border-gray-200">
+                <button class="faq-toggle flex justify-between items-center w-full py-5 text-right">
+                    <span class="font-semibold text-lg text-gray-800">چطور تاریخ پرواز را تغییر دهیم؟</span>
+                    <div class="relative w-6 h-6">
+                        <svg class="icon-up absolute w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" /></svg>
+                        <svg class="icon-down absolute w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+                    </div>
+                </button>
+                <div class="faq-content overflow-hidden">
+                    <p class="pt-2 pb-5 px-1 text-gray-600 leading-relaxed">در صورتی که ۴۸ ساعت به مهلت پرواز شما مانده باشد با پرداخت خسارت ۲۰ درصدی این امر امکان پذیر خواهد بود.</p>
+                </div>
+            </div>
+
+            <!-- بقیه سوالات را به همین شکل اضافه کنید... -->
+
         </div>
     </section>
 
-    <!-- ===== دانلود اپلیکیشن ===== -->
-    <section class="bg-brand-blue-light mt-10">
-        <div class="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-            <div class="text-center md:text-right">
-                <h2 class="text-3xl font-bold text-brand-dark mb-4">اپلیکیشن بیلیتو را دانلود کنید!</h2>
-                <p class="text-brand-gray-text mb-8 leading-relaxed">با نصب اپلیکیشن بیلیتو، به سادگی و در هر زمان و مکان، بلیط هواپیما و بیمه مسافرتی خود را خریداری کنید.</p>
-                <div class="flex justify-center md:justify-start gap-4">
-                    <!-- لینک و عکس اپ استورها -->
-                    <a href="#"><div class="h-14 w-36 placeholder-img">Google Play</div></a>
-                    <a href="#"><div class="h-14 w-36 placeholder-img">App Store</div></a>
-                    <a href="#"><div class="h-14 w-36 placeholder-img">Cafe Bazaar</div></a>
-                </div>
-            </div>
-            <div class="hidden md:flex justify-center">
-                <!-- عکس موبایل -->
-                <div class="h-80 w-64 placeholder-img">عکس موبایل</div>
-            </div>
-        </div>
-    </section>
 </main>
 
 <!-- ===== فوتر ===== -->
@@ -435,31 +469,55 @@
     </div>
 </footer>
 
+<!-- ===== اسکریپت‌ها در انتهای Body ===== -->
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const faqToggles = document.querySelectorAll('.faq-toggle');
+    // کانفیگ Tailwind
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    'brand-blue': '#2979FF',
+                    'brand-blue-light': '#F3F7FF',
+                    'brand-gray-text': '#707070',
+                    'brand-dark': '#1C1C1C',
+                }
+            }
+        }
+    }
 
-        faqToggles.forEach(toggle => {
-            toggle.addEventListener('click', () => {
-                const faqItem = toggle.parentElement;
-                const content = toggle.nextElementSibling;
-                const isOpen = faqItem.classList.contains('open');
+    // اسکریپت نهایی و صحیح برای FAQ
+    document.addEventListener('DOMContentLoaded', function () {
+        const faqContainer = document.getElementById('faq-container');
+        if (faqContainer) {
+            faqContainer.addEventListener('click', function(e) {
+                const toggle = e.target.closest('.faq-toggle');
+                if (!toggle) return;
+
+                const currentItem = toggle.parentElement;
+                const content = currentItem.querySelector('.faq-content');
+                const isItemOpen = currentItem.classList.contains('open');
 
                 // بستن تمام آیتم‌های باز
-                document.querySelectorAll('.faq-item.open').forEach(openItem => {
-                    openItem.classList.remove('open');
-                    openItem.querySelector('.faq-content').style.display = 'none';
+                const allItems = faqContainer.querySelectorAll('.faq-item');
+                allItems.forEach(item => {
+                    if (item !== currentItem) {
+                        item.classList.remove('open');
+                        const otherContent = item.querySelector('.faq-content');
+                        if (otherContent) otherContent.style.maxHeight = '0px';
+                    }
                 });
 
-                // اگر آیتم کلیک شده، قبلا باز نبوده، آن را باز کن
-                if (!isOpen) {
-                    faqItem.classList.add('open');
-                    content.style.display = 'block';
+                // باز یا بسته کردن آیتم کلیک شده
+                if (isItemOpen) {
+                    currentItem.classList.remove('open');
+                    content.style.maxHeight = '0px';
+                } else {
+                    currentItem.classList.add('open');
+                    content.style.maxHeight = content.scrollHeight + 'px';
                 }
             });
-        });
+        }
     });
 </script>
-
 </body>
 </html>
