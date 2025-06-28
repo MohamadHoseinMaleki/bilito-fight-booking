@@ -424,51 +424,111 @@
 </main>
 
 <!-- ===== فوتر ===== -->
-<footer class="bg-gray-800 text-white pt-16 pb-6">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-            <!-- ستون اول: درباره ما و لوگو -->
-            <div class="space-y-4 lg:col-span-1">
-                <div class="h-12 w-32 placeholder-img bg-gray-500 text-white">لوگو سفید</div>
-                <p class="text-sm text-gray-300 leading-relaxed">
-                    بیلیتو بستری برای خرید آنلاین بلیط هواپیما و بیمه مسافرتی است که با پشتیبانی ۲۴ ساعته، تجربه‌ای امن و راحت از خرید را برای شما فراهم می‌کند.
-                </p>
+<footer id="page-footer" class="bg-[#F9F9F9] text-[#343434]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- بخش بالایی فوتر: دانلود اپلیکیشن (با چیدمان و حاشیه اصلاح شده) -->
+        <div class="py-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+
+            <!-- ستون متن (بدون تغییر) -->
+            <div class="text-center md:text-right">
+                <h2 class="text-2xl font-bold mb-4">اپلیکیشن بیلیتو</h2>
+                <p class="text-gray-600">با نصب اپلیکیشن بیلیتو راحتی و سرعت در رزرو بلیط هواپیما را داشته باشید.</p>
             </div>
-            <!-- ستون دوم: لینک‌های مفید -->
-            <div>
-                <h3 class="font-bold text-lg mb-4">لینک‌های مفید</h3>
-                <ul class="space-y-3 text-sm text-gray-300">
-                    <li><a href="#" class="hover:text-white transition-colors">درباره ما</a></li>
-                    <li><a href="#" class="hover:text-white transition-colors">تماس با ما</a></li>
-                    <li><a href="#" class="hover:text-white transition-colors">استرداد بلیط</a></li>
-                    <li><a href="#" class="hover:text-white transition-colors">راهنمای خرید</a></li>
-                    <li><a href="#" class="hover:text-white transition-colors">قوانین و مقررات</a></li>
-                </ul>
+
+            <!-- ستون دکمه‌ها (تغییر اصلی اینجاست) -->
+            <!-- کلاس ml-8 اضافه شد تا دکمه‌ها کمی به چپ جابجا شوند -->
+            <div class="flex justify-center md:justify-end gap-4 ml-0">
+                <!-- ترتیب دکمه‌ها -->
+                <a href="#">
+                    <img src="../../icons/playstore.png" alt="دانلود از گوگل پلی" class="h-12 w-auto">
+                </a>
+                <a href="#">
+                    <img src="../../icons/applestore.png" alt="دانلود از اپ استور" class="h-12 w-auto">
+                </a>
             </div>
-            <!-- ستون سوم: اطلاعات تماس -->
-            <div>
-                <h3 class="font-bold text-lg mb-4">اطلاعات تماس</h3>
-                <ul class="space-y-3 text-sm text-gray-300">
-                    <li class="flex items-start"><span class="me-2 mt-1">•</span>تلفن پشتیبانی: ۰۲۱-۳۲۷۶۵۴۹۸</li>
-                    <li class="flex items-start"><span class="me-2 mt-1">•</span>ایمیل: info@bilito.com</li>
-                    <li class="flex items-start"><span class="me-2 mt-1">•</span>آدرس: تهران، میدان آزادی، خیابان آزادی، پلاک ۱۲۳</li>
-                </ul>
-            </div>
-            <!-- ستون چهارم: نمادهای اعتماد -->
-            <div>
-                <h3 class="font-bold text-lg mb-4">نمادهای اعتماد</h3>
-                <div class="flex gap-4">
-                    <div class="h-24 w-24 placeholder-img bg-white text-gray-600">نماد</div>
-                    <div class="h-24 w-24 placeholder-img bg-white text-gray-600">نماد</div>
-                </div>
-            </div>
+
         </div>
-        <div class="border-t border-gray-700 mt-10 pt-6 text-center text-xs text-gray-400">
-            <p>کلیه حقوق این سایت محفوظ و متعلق به شرکت بیلیتو می‌باشد.</p>
+
+        <hr class="border-gray-200">
+
+        <!-- بخش میانی فوتر (چیدمان دو ستونی) -->
+        <div class="py-12 grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-16 text-center md:text-right text-[#343434]">
+
+            <!-- ستون راست: اطلاعات و شبکه‌های اجتماعی (با ساختار اصلاح شده) -->
+            <div class="flex flex-col items-center md:items-start">
+
+                <!-- بخش لوگو و اطلاعات تماس -->
+                <div class="space-y-6 flex flex-col items-center md:items-start">
+                    <a href="#">
+                        <img src="../../pictuers/LOGO.png" alt="لوگوی بیلیتو" class="h-12 w-auto">
+                    </a>
+                    <p>تلفن پشتیبانی: <span class="font-semibold">۹۸ ۷۶ ۵۴ ۳۲_۰۲۱</span></p>
+                    <p>آدرس دفتر مرکزی: تهران، میدان آزادی، خیابان آزادی، خیابان جیحون، طوس غربی.</p>
+                </div>
+
+                <!-- بخش شبکه‌های اجتماعی (تغییرات اصلی اینجاست) -->
+                <!-- حالا mt-12 به درستی کار می‌کند -->
+                <div class="space-y-4 flex flex-col items-center md:items-start mt-24 md:pr-16">
+                    <div class="flex items-center gap-4">
+                        <a href="#" class="text-gray-500 hover:text-[#1D91CC]"><img src="../../icons/Telegram.png" class="w-6 h-6"></a>
+                        <a href="#" class="text-gray-500 hover:text-[#1D91CC]"><img src="../../icons/Linkedin.png" class="w-6 h-6"></a>
+                        <a href="#" class="text-gray-500 hover:text-[#1D91CC]"><img src="../../icons/YouTube.png" class="w-6 h-6"></a>
+                        <a href="#" class="text-gray-500 hover:text-[#1D91CC]"><img src="../../icons/Instagram.png" class="w-6 h-6"></a>
+                        <a href="#" class="text-gray-500 hover:text-[#1D91CC]"><img src="../../icons/FaceBook.png" class="w-6 h-6"></a>
+                        <a href="#" class="text-gray-500 hover:text-[#1D91CC]"><img src="../../icons/X.png" class="w-6 h-6"></a>
+                    </div>
+                    <a href="mailto:shiva.arghvni1996@gmail.com" class="text-[#1D91CC] font-semibold">shiva.arghvni1996@gmail.com</a>
+                </div>
+
+            </div>
+
+            <!-- ستون چپ: لینک‌ها و نمادها -->
+            <div class="space-y-10 md:pr-10">
+
+                <!-- بخش لینک‌های مفید -->
+                <div class="space-y-4">
+                    <h3 class="font-bold text-lg mb-4 md:pr-64">">لینک‌های مفید بیلیتو</h3>
+                    <ul class="space-y-3 md:pr-64">
+                        <li><a href="#" class="hover:text-[#1D91CC] transition-colors">درباره ما</a></li>
+                        <li><a href="#" class="hover:text-[#1D91CC] transition-colors">تماس با ما</a></li>
+                        <li><a href="#" class="hover:text-[#1D91CC] transition-colors">استرداد بلیط</a></li>
+                        <li><a href="#" class="hover:text-[#1D91CC] transition-colors">راهنمای خرید بلیط</a></li>
+                        <li><a href="#" class="hover:text-[#1D91CC] transition-colors">قوانین و مقررات</a></li>
+                    </ul>
+                </div>
+
+                <!-- بخش نمادهای اعتماد (تغییرات اصلی اینجاست) -->
+                <!-- justify-end برای انتقال به چپ و h-16 برای کوچکتر کردن نمادها -->
+                <div class="flex justify-center md:justify-end">
+                    <div class="flex flex-wrap justify-center md:justify-end gap-4 items-center">
+                        <a href="#"><img src="../../icons/EP.png" alt="نماد ایرلاین" class="h-9 w-auto"></a>
+                        <a href="#"><img src="../../icons/CAO.png" alt="نماد هواپیمایی" class="h-9 w-auto"></a>
+                        <a href="#"><img src="../../icons/aira.png" alt="نماد ساماندهی" class="h-9 w-auto"></a>
+                        <a href="#"><img src="../../icons/Enamad.png" alt="نماد اعتماد" class="h-9 w-auto"></a>
+                        <a href="#"><img src="../../icons/money.png" alt="حقوق مسافر" class="h-9 w-auto"></a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <hr class="border-gray-200">
+
+        <!-- بخش پایینی فوتر: بازگشت به بالا -->
+        <div class="text-center py-6">
+            <a href="#page-footer" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="inline-flex flex-col items-center text-gray-600 hover:text-[#1D91CC] transition-colors">
+                <div class="w-5 h-5 mb-2 border-2 border-gray-400 rounded-full flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+                    </svg>
+                </div>
+                <span>بازگشت به بالا</span>
+            </a>
         </div>
     </div>
 </footer>
-
 <!-- ===== اسکریپت‌ها در انتهای Body ===== -->
 <script>
     // کانفیگ Tailwind
