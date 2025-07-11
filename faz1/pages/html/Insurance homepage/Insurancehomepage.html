@@ -77,103 +77,96 @@
 </head>
 <body class="bg-white">
 
-<!-- ===== header ===== -->
+<!-- ===== header (بازطراحی شده برای ریسپانسیو) ===== -->
 <header class="bg-white shadow-sm border-b border-gray-100">
     <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-24">
-
-            <!-- بخش راست: لوگو و منوها -->
+        <!-- هدر دسکتاپ (مخفی در موبایل) -->
+        <div class="hidden md:flex items-center justify-between h-24">
             <div class="flex items-center">
-
-                <!-- لوگوی شما که به صورت لینک عمل می‌کند -->
-                <!-- با کلیک روی این لینک به آدرسی که در href مشخص شده می‌رود -->
-                <a href="#" class="flex-shrink-0">
-                    <!-- تگ SVG حذف و این تگ img جایگزین شد -->
-                    <img src="../../pictuers/LOGO.png" alt="لوگوی بیلیتو" class="h-10 w-auto">
-                </a>
-
-                <!-- منوهای ناوبری (در موبایل پنهان می‌شود) -->
-                <nav class="hidden md:flex items-center space-x-8 space-x-reverse mr-8">
+                <a href="#"><img src="../../pictuers/LOGO.png" alt="لوگوی بیلیتو" class="h-10 w-auto"></a>
+                <nav class="flex items-center space-x-8 space-x-reverse mr-8">
                     <a href="#" class="text-[#1D91CC] font-bold border-b-2 border-[#1D91CC] pb-1 text-lg">صفحه اصلی</a>
                     <a href="#" class="text-[#606060] hover:text-[#1D91CC] transition-colors text-lg">بیمه مسافرتی</a>
                     <a href="#" class="text-[#606060] hover:text-[#1D91CC] transition-colors text-lg">سفرهای من</a>
                     <a href="#" class="flex items-center text-[#606060] hover:text-[#1D91CC] transition-colors text-lg">
                         <span>سایر موارد</span>
-                        <svg class="w-5 h-5 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
+                        <svg class="w-5 h-5 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
                     </a>
                 </nav>
             </div>
-
-            <!-- بخش چپ: پشتیبانی و ورود (بدون تغییر) -->
             <div class="flex items-center">
-                <div class="hidden lg:flex items-center space-x-6 space-x-reverse">
-                    <!-- پشتیبانی -->
+                <div class="flex items-center space-x-6 space-x-reverse">
                     <div class="flex items-center text-[#606060]">
                         <span>۴۰۴۵_۰۲۱ پشتیبانی</span>
-                        <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 6.75z" />
-                        </svg>
+                        <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 6.75z" /></svg>
                     </div>
-
-                    <!-- دکمه ورود/ثبت‌نام -->
                     <a href="#" class="bg-[#1D91CC] text-white px-5 py-2.5 rounded-lg flex items-center gap-x-2 font-semibold hover:bg-[#1982b6] transition-colors">
-                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                        </svg>
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>
                         <span>ورود/ ثبت نام</span>
                     </a>
                 </div>
-
-                <!-- منوی همبرگری برای موبایل -->
-                <div class="flex md:hidden">
-                    <button type="button" class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600">
-                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
-
             </div>
+        </div>
+        <!-- هدر موبایل (نمایش فقط در موبایل) -->
+        <div class="flex md:hidden items-center justify-between h-20">
+            <button type="button" class="text-gray-500 p-2"><svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg></button>
+            <a href="#"><img src="../../pictuers/LOGO.png" alt="لوگوی بیلیتو" class="h-9 w-auto"></a>
+            <button type="button" class="text-gray-500 border rounded-full p-1.5"><svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg></button>
         </div>
     </div>
 </header>
 
 <main>
     <!-- ===== بخش تصویر Hero (با باکس جستجو) ===== -->
-    <section class="insurance-hero-bg relative">
+    <!-- ===== 2. بخش Hero و جستجو (اصلاح شده) ===== -->
+    <section class="relative">
+
+        <!-- تصویر برای دسکتاپ (در موبایل مخفی است) -->
+        <!-- آدرس تصویر دسکتاپ خود را در src زیر قرار دهید -->
+        <img src="../../pictuers/STATE=Insurance, Device=web, SIZE=340.HOME PAGE.png" alt="بنر بیمه مسافرتی دسکتاپ" class="hidden md:block w-full h-[360px] object-cover">
+
+
+        <!-- تصویر برای موبایل (در دسکتاپ مخفی است) -->
+        <img src="../../pictuers/STATE=Insurance, Device=mob, SIZE=100. searchbox.png" alt="بیمه مسافرتی موبایل" class="block md:hidden w-full h-[360px]">
 
         <!-- ===== باکس جستجو ===== -->
-        <div class="absolute bottom-[-44px] left-1/2 -translate-x-1/2 w-full max-w-[1205px] h-[88px] bg-white border border-[#EDEDED] rounded-lg search-box-shadow p-6 flex items-center">
-            <div class="grid grid-cols-4 gap-x-4 w-full">
+        <div class="absolute bottom-[-150px] md:bottom-[-44px] left-1/2 -translate-x-1/2 w-full max-w-[1205px] h-auto md:h-[88px] bg-white border border-[#EDEDED] rounded-lg search-box-shadow p-4 md:p-6 flex items-center">
+
+            <!--
+              تغییرات:
+              1. grid-cols-1 md:grid-cols-4: در موبایل تک ستونه، در دسکتاپ چهار ستونه.
+              2. gap-4: فاصله بین همه آیتم‌ها (هم عمودی و هم افقی).
+            -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 w-full">
+
 
                 <!-- فیلد ۱: کشور مقصد -->
                 <div class="relative">
-                    <label class="absolute -top-2 right-3 text-xs text-gray-500">کشور مقصد</label>
+                    <label class="absolute -top-2 right-3 text-xs text-gray-500 bg-white px-1">کشور مقصد</label>
                     <div class="flex items-center border border-gray-300 rounded-lg p-2.5 h-[52px]">
-                        <input type="text" value="استانبول" class="w-full bg-transparent focus:outline-none pt-2 font-semibold text-gray-800">
+                        <input type="text" value="استانبول" class="w-full bg-transparent focus:outline-none font-semibold text-gray-800">
                     </div>
                 </div>
 
                 <!-- فیلد ۲: مدت سفر -->
                 <div class="relative">
-                    <label class="absolute -top-2 right-3 text-xs text-gray-500">مدت سفر</label>
+                    <label class="absolute -top-2 right-3 text-xs text-gray-500 bg-white px-1">مدت سفر</label>
                     <div class="flex items-center border border-gray-300 rounded-lg p-2.5 h-[52px]">
-                        <input type="text" value="۵ تا ۸ روز" class="w-full bg-transparent focus:outline-none pt-2 font-semibold text-gray-800">
+                        <input type="text" value="۵ تا ۸ روز" class="w-full bg-transparent focus:outline-none font-semibold text-gray-800">
                     </div>
                 </div>
 
                 <!-- فیلد ۳: مسافران -->
                 <div class="relative">
-                    <label class="absolute -top-2 right-3 text-xs text-gray-500">مسافران</label>
+                    <label class="absolute -top-2 right-3 text-xs text-gray-500 bg-white px-1">مسافران</label>
                     <div class="flex items-center border border-gray-300 rounded-lg p-2.5 h-[52px]">
-                        <input type="text" value="۱ مسافر" class="w-full bg-transparent focus:outline-none pt-2 font-semibold text-gray-800">
+                        <input type="text" value="۱ مسافر" class="w-full bg-transparent focus:outline-none font-semibold text-gray-800">
                     </div>
                 </div>
 
                 <!-- دکمه جستجو -->
-                <div>
+                <!-- mt-2 md:mt-0 برای ایجاد فاصله فقط در موبایل -->
+                <div class="mt-2 md:mt-0">
                     <button class="bg-[#1D91CC] text-white w-full h-[52px] rounded-lg flex items-center justify-center gap-x-2 font-bold hover:bg-[#1982b6] transition-colors">
                         <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" /></svg>
                         <span>جستجو</span>
@@ -186,7 +179,7 @@
     </section>
 
     <!-- ===== بخش توضیحات بیمه مسافرتی ===== -->
-    <section class="pt-28 pb-16">
+    <section class="pt-48 md:pt-28 pb-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-right">
             <!-- عنوان بخش -->
             <h2 class="text-3xl font-bold mb-6 text-brand-dark">بیمه مسافرتی چیست؟</h2>
@@ -278,22 +271,22 @@
                     <table class="w-full text-center border border-gray-400/30">
                         <thead class="bg-[#D0E9F5]">
                         <tr>
-                            <th class="p-4 font-bold text-gray-800 text-lg border border-gray-400/30 whitespace-nowrap">عوامل موثر در تعیین قیمت</th>
-                            <th class="p-4 font-bold text-gray-800 text-lg border border-gray-400/30 whitespace-nowrap">نحوه محاسبه در فرمول تعیین حق بیمه</th>
+                            <th class="p-4 font-bold text-gray-800 text-lg border border-gray-400/30 md:whitespace-nowrap">عوامل موثر در تعیین قیمت</th>
+                            <th class="p-4 font-bold text-gray-800 text-lg border border-gray-400/30 md:whitespace-nowrap">نحوه محاسبه در فرمول تعیین حق بیمه</th>
                         </tr>
                         </thead>
                         <tbody class="text-gray-700">
                         <tr>
-                            <td class="p-4 font-semibold border border-gray-400/30 align-middle whitespace-nowrap">سن مسافر</td>
-                            <td class="p-4 border border-gray-400/30 align-middle whitespace-nowrap">تا ۱۲ سال / ۱۳ تا ۶۵ سال / ۶۶ تا ۷۰ سال / ۷۱ تا ۷۵ سال / ۷۶ تا ۸۰ سال</td>
+                            <td class="p-4 font-semibold border border-gray-400/30 align-middle md:whitespace-nowrap">سن مسافر</td>
+                            <td class="p-4 border border-gray-400/30 align-middle md:whitespace-nowrap">تا ۱۲ سال / ۱۳ تا ۶۵ سال / ۶۶ تا ۷۰ سال / ۷۱ تا ۷۵ سال / ۷۶ تا ۸۰ سال</td>
                         </tr>
                         <tr>
-                            <td class="p-4 font-semibold border border-gray-400/30 align-middle whitespace-nowrap">مدت سفر</td>
-                            <td class="p-4 border border-gray-400/30 align-middle whitespace-nowrap">۱ تا ۷ روز / ۸ تا ۱۵ روز / ۱۶ تا ۲۳ روز / ۲۴ تا ۳۱ روز / ۳۲ تا ۴۵ روز / ۶۳ تا ۹۲ روز / ۶ ماهه / ۱ ساله</td>
+                            <td class="p-4 font-semibold border border-gray-400/30 align-middle md:whitespace-nowrap">مدت سفر</td>
+                            <td class="p-4 border border-gray-400/30 align-middle md:whitespace-nowrap">۱ تا ۷ روز / ۸ تا ۱۵ روز / ۱۶ تا ۲۳ روز / ۲۴ تا ۳۱ روز / ۳۲ تا ۴۵ روز / ۶۳ تا ۹۲ روز / ۶ ماهه / ۱ ساله</td>
                         </tr>
                         <tr>
-                            <td class="p-4 font-semibold border border-gray-400/30 align-middle whitespace-nowrap">مقصد سفر</td>
-                            <td class="p-4 border border-gray-400/30 align-middle whitespace-nowrap">بر اساس مناطق جغرافیایی مختلف</td>
+                            <td class="p-4 font-semibold border border-gray-400/30 align-middle md:whitespace-nowrap">مقصد سفر</td>
+                            <td class="p-4 border border-gray-400/30 align-middle md:whitespace-nowrap">بر اساس مناطق جغرافیایی مختلف</td>
                         </tr>
                         </tbody>
                     </table>
@@ -427,104 +420,148 @@
 <footer id="page-footer" class="bg-[#F9F9F9] text-[#343434]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <!-- بخش بالایی فوتر: دانلود اپلیکیشن (با چیدمان و حاشیه اصلاح شده) -->
-        <div class="py-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-
-            <!-- ستون متن (بدون تغییر) -->
+        <!-- بخش بالایی فوتر: این بخش فقط در دسکتاپ نمایش داده می‌شود -->
+        <div class="hidden lg:grid py-12 grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <!-- ستون متن -->
             <div class="text-center md:text-right">
                 <h2 class="text-2xl font-bold mb-4">اپلیکیشن بیلیتو</h2>
                 <p class="text-gray-600">با نصب اپلیکیشن بیلیتو راحتی و سرعت در رزرو بلیط هواپیما را داشته باشید.</p>
             </div>
-
-            <!-- ستون دکمه‌ها (تغییر اصلی اینجاست) -->
-            <!-- کلاس ml-8 اضافه شد تا دکمه‌ها کمی به چپ جابجا شوند -->
-            <div class="flex justify-center md:justify-end gap-4 ml-0">
-                <!-- ترتیب دکمه‌ها -->
-                <a href="#">
+            <!-- ستون دکمه‌ها -->
+            <div class="flex justify-center md:justify-end gap-4">
+                <a href="https.play.google.com/">
                     <img src="../../icons/playstore.png" alt="دانلود از گوگل پلی" class="h-12 w-auto">
                 </a>
-                <a href="#">
+                <a href="https.www.apple.com/app-store/">
                     <img src="../../icons/applestore.png" alt="دانلود از اپ استور" class="h-12 w-auto">
                 </a>
             </div>
-
         </div>
 
-        <hr class="border-gray-200">
+        <hr class="hidden lg:block border-gray-200">
 
-        <!-- بخش میانی فوتر (چیدمان دو ستونی) -->
-        <div class="py-12 grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-16 text-center md:text-right text-[#343434]">
+        <!--
+          بخش اصلی فوتر
+          در موبایل (پیش‌فرض): یک گرید تک ستونی که المان‌های داخلش با order مرتب میشوند.
+          در دسکتاپ (lg): به گرید دو ستونی تبدیل می‌شود و ساختار اصلی شما را بازیابی می‌کند.
+        -->
+        <div class="py-12 grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-10 text-center lg:text-right">
 
-            <!-- ستون راست: اطلاعات و شبکه‌های اجتماعی (با ساختار اصلاح شده) -->
-            <div class="flex flex-col items-center md:items-start">
+            <!--
+              ستون راست (در دسکتاپ)
+              در موبایل: کلاس `contents` باعث می‌شود این div نادیده گرفته شده و فرزندانش مستقیماً در grid اصلی قرار بگیرند.
+            -->
+            <div class="contents lg:flex lg:flex-col lg:items-start">
 
                 <!-- بخش لوگو و اطلاعات تماس -->
-                <div class="space-y-6 flex flex-col items-center md:items-start">
-                    <a href="#">
-                        <img src="../../pictuers/LOGO.png" alt="لوگوی بیلیتو" class="h-12 w-auto">
-                    </a>
-                    <p>تلفن پشتیبانی: <span class="font-semibold">۹۸ ۷۶ ۵۴ ۳۲_۰۲۱</span></p>
-                    <p>آدرس دفتر مرکزی: تهران، میدان آزادی، خیابان آزادی، خیابان جیحون، طوس غربی.</p>
+                <!-- order-1: این بخش در موبایل اولین آیتم است. -->
+                <div class="space-y-6 flex flex-col items-center lg:items-start order-1 w-full">
+                    <!-- کد جدید فقط برای همین بخش -->
+                    <!-- در موبایل: فلکس ردیفی / در دسکتاپ: به حالت ستونی قبلی برمی‌گردد -->
+                    <div class="flex flex-row-reverse justify-between items-start w-full order-1 lg:flex-col lg:items-start lg:space-y-6">
+                        <!-- آیتم چپ: لوگو -->
+                        <a href="#" class="mt-6 lg:mt-5">
+                            <img src="../../pictuers/LOGO.png" alt="لوگوی بیلیتو" class="h-12 w-auto">
+                        </a>
+                        <!-- آیتم راست: متن‌ها -->
+                        <div class="flex flex-col-reverse lg:flex-col text-right text-sm space-y-2">
+                            <p>تلفن پشتیبانی: <span class="font-semibold">۹۸ ۷۶ ۵۴ ۳۲_۰۲۱</span></p><br>
+                            <p>آدرس دفتر مرکزی: تهران، میدان آزادی، خیابان آزادی، خیابان جیحون، طوس غربی.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- بخش شبکه‌های اجتماعی (تغییرات اصلی اینجاست) -->
-                <!-- حالا mt-12 به درستی کار می‌کند -->
-                <div class="space-y-4 flex flex-col items-center md:items-start mt-24 md:pr-16">
-                    <div class="flex items-center gap-4">
-                        <a href="#" class="text-gray-500 hover:text-[#1D91CC]"><img src="../../icons/Telegram.png" class="w-6 h-6"></a>
-                        <a href="#" class="text-gray-500 hover:text-[#1D91CC]"><img src="../../icons/Linkedin.png" class="w-6 h-6"></a>
-                        <a href="#" class="text-gray-500 hover:text-[#1D91CC]"><img src="../../icons/YouTube.png" class="w-6 h-6"></a>
-                        <a href="#" class="text-gray-500 hover:text-[#1D91CC]"><img src="../../icons/Instagram.png" class="w-6 h-6"></a>
-                        <a href="#" class="text-gray-500 hover:text-[#1D91CC]"><img src="../../icons/FaceBook.png" class="w-6 h-6"></a>
-                        <a href="#" class="text-gray-500 hover:text-[#1D91CC]"><img src="../../icons/X.png" class="w-6 h-6"></a>
+                <!-- بخش شبکه‌های اجتماعی -->
+                <!-- order-5: این بخش در موبایل پنجمین آیتم (بعد از نمادها) است. -->
+                <div class="space-y-4 flex flex-col items-center lg:items-start lg:mt-24 lg:pr-16 order-5 w-full">
+                    <div class="flex items-center gap-6 lg:pr-1">
+                        <a href="https://x.com/" class="text-gray-500 hover:text-[#1D91CC]"><img src="../../icons/X.png" class="w-6 h-6"></a>
+                        <a href="https://www.facebook.com/" class="text-gray-500 hover:text-[#1D91CC]"><img src="../../icons/FaceBook.png" class="w-6 h-6"></a>
+                        <a href="https://www.instagram.com/" class="text-gray-500 hover:text-[#1D91CC]"><img src="../../icons/Instagram.png" class="w-6 h-6"></a>
+                        <a href="https://youtube.com/" class="text-gray-500 hover:text-[#1D91CC]"><img src="../../icons/YouTube.png" class="w-6 h-6"></a>
+                        <a href="https://www.linkedin.com/" class="text-gray-500 hover:text-[#1D91CC]"><img src="../../icons/Linkedin.png" class="w-6 h-6"></a>
+                        <a href="https://web.telegram.org/" class="text-gray-500 hover:text-[#1D91CC]"><img src="../../icons/Telegram.png" class="w-6 h-6"></a>
                     </div>
-                    <a href="mailto:shiva.arghvni1996@gmail.com" class="text-[#1D91CC] font-semibold">shiva.arghvni1996@gmail.com</a>
+                    <a href="mailto:S.Hossein.Hosseini1381@gmail.com" class="text-blue-500 font-semibold">S.Hossein.Hosseini1381@gmail.com</a>
                 </div>
 
             </div>
 
-            <!-- ستون چپ: لینک‌ها و نمادها -->
-            <div class="space-y-10 md:pr-10">
+            <!--
+              ستون چپ (در دسکتاپ)
+              در موبایل: این div هم با `contents` نادیده گرفته می‌شود.
+            -->
+            <div class="contents lg:block lg:space-y-10 lg:pr-10">
 
-                <!-- بخش لینک‌های مفید -->
-                <div class="space-y-4">
-                    <h3 class="font-bold text-lg mb-4 md:pr-64">">لینک‌های مفید بیلیتو</h3>
-                    <ul class="space-y-3 md:pr-64">
-                        <li><a href="#" class="hover:text-[#1D91CC] transition-colors">درباره ما</a></li>
-                        <li><a href="#" class="hover:text-[#1D91CC] transition-colors">تماس با ما</a></li>
-                        <li><a href="#" class="hover:text-[#1D91CC] transition-colors">استرداد بلیط</a></li>
-                        <li><a href="#" class="hover:text-[#1D91CC] transition-colors">راهنمای خرید بلیط</a></li>
-                        <li><a href="#" class="hover:text-[#1D91CC] transition-colors">قوانین و مقررات</a></li>
-                    </ul>
+                <!-- پوشه جدید: در موبایل دو ستونی، در دسکتاپ نامرئی -->
+                <div class="flex justify-between items-start w-full order-2 lg:contents">
+
+                    <!-- ستون راست (موبایل): لینک‌های مفید -->
+                    <div class="space-y-4 text-right lg:pr-64">
+                        <h3 class="font-bold text-lg mb-4">لینک‌های مفید</h3>
+                        <ul class="space-y-3 text-sm">
+                            <li><a href="#" class="hover:text-[#1D91CC] transition-colors">درباره ما</a></li>
+                            <li><a href="#" class="hover:text-[#1D91CC] transition-colors">تماس با ما</a></li>
+                            <li><a href="#" class="hover:text-[#1D91CC] transition-colors">استرداد بلیط</a></li>
+                            <li><a href="#" class="hover:text-[#1D91CC] transition-colors">راهنمای خرید بلیط</a></li>
+                            <li><a href="#" class="hover:text-[#1D91CC] transition-colors">قوانین و مقررات</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- ستون چپ (موبایل): دکمه‌های دانلود -->
+                    <div class="flex flex-col gap-4 w-40 lg:hidden">
+                        <a href="https://play.google.com/"><img src="../../icons/playstore.png" alt="دانلود از گوگل پلی" class="w-full h-auto"></a>
+                        <a href="https://www.apple.com/app-store/"><img src="../../icons/applestore.png" alt="دانلود از اپ استور" class="w-full h-auto"></a>
+                    </div>
+
                 </div>
 
-                <!-- بخش نمادهای اعتماد (تغییرات اصلی اینجاست) -->
-                <!-- justify-end برای انتقال به چپ و h-16 برای کوچکتر کردن نمادها -->
-                <div class="flex justify-center md:justify-end">
+                <!-- بخش نمادهای اعتماد (فقط در دسکتاپ نمایش داده می‌شود) -->
+                <div class="order-4 h-9 lg:flex justify-center h-14 md:justify-end">
                     <div class="flex flex-wrap justify-center md:justify-end gap-4 items-center">
-                        <a href="#"><img src="../../icons/EP.png" alt="نماد ایرلاین" class="h-9 w-auto"></a>
-                        <a href="#"><img src="../../icons/CAO.png" alt="نماد هواپیمایی" class="h-9 w-auto"></a>
-                        <a href="#"><img src="../../icons/aira.png" alt="نماد ساماندهی" class="h-9 w-auto"></a>
-                        <a href="#"><img src="../../icons/Enamad.png" alt="نماد اعتماد" class="h-9 w-auto"></a>
-                        <a href="#"><img src="../../icons/money.png" alt="حقوق مسافر" class="h-9 w-auto"></a>
+                        <a href="https://www.aira.ir/"><img src="../../icons/EP.png" alt="نماد ایرلاین" class="h-14 lg:h-9 w-auto"></a>
+                        <a href="https://caa.gov.ir/"><img src="../../icons/CAO.png" alt="نماد هواپیمایی" class="h-14 lg:h-9 w-auto"></a>
+                        <a href="https://www.aira.ir/"><img src="../../icons/aira.png" alt="نماد ساماندهی" class="h-14 lg:h-9 w-auto"></a>
+                        <a href="https://enamad.ir/"><img src="../../icons/Enamad.png" alt="نماد اعتماد" class="h-14 lg:h-9 w-auto"></a>
+                        <a href="https://farasa.cao.ir/"><img src="../../icons/money.png" alt="حقوق مسافر" class="h-14 lg:h-9 w-auto"></a>
                     </div>
                 </div>
-
             </div>
-
         </div>
 
         <hr class="border-gray-200">
 
-        <!-- بخش پایینی فوتر: بازگشت به بالا -->
+        <!-- بخش پایینی فوتر: بازگشت به بالا (مطابق طرح موبایل) -->
+        <!-- کد جدید و نهایی برای دکمه بازگشت به بالا -->
         <div class="text-center py-6">
-            <a href="#page-footer" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="inline-flex flex-col items-center text-gray-600 hover:text-[#1D91CC] transition-colors">
-                <div class="w-5 h-5 mb-2 border-2 border-gray-400 rounded-full flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
-                    </svg>
+            <a href="#page-footer" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="inline-flex flex-col items-center group transition-all duration-300">
+
+                <!--
+                  لایه بیرونی: مربع با گوشه‌های گرد و پس‌زمینه آبی روشن
+                  این بخش بصری اصلی در موبایل است.
+                -->
+                <div class="w-10 h-10 flex items-center justify-center bg-sky-100/60 group-hover:bg-sky-200/60 rounded-2xl transition-colors">
+                    <!--
+                      لایه داخلی: دایره با حاشیه آبی
+                    -->
+                    <div class="w-7 h-7 flex items-center justify-center rounded-full border-2 border-sky-600">
+                        <!--
+                          آیکون فلش
+                        -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+                        </svg>
+                    </div>
                 </div>
-                <span>بازگشت به بالا</span>
+
+                <!--
+                  متن "بازگشت به بالا"
+                  (فقط در دسکتاپ نمایش داده می‌شود)
+                -->
+                <span class="hidden lg:block mt-2 text-sm text-gray-600 group-hover:text-sky-700 transition-colors">
+                    بازگشت به بالا
+                </span>
+
             </a>
         </div>
     </div>
