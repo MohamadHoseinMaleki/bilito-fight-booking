@@ -1,180 +1,0 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>بیمه مسافرتی | بیلیتو</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: sans-serif;
-            background: #f7f7f7;
-            color: #333;
-        }
-        header {
-            background: #ffffff;
-            padding: 15px;
-            text-align: center;
-            border-bottom: 1px solid #ddd;
-        }
-        header h1 {
-            margin: 0;
-            color: #007bff;
-        }
-        .hero {
-            background: url('airplane.jpg') center/cover no-repeat;
-            height: 180px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 20px;
-            font-weight: bold;
-        }
-        .search-form {
-            background: #ffffff;
-            padding: 15px;
-            margin: 15px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        .search-form input,
-        .search-form select,
-        .search-form button {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 16px;
-        }
-        .search-form button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            font-weight: bold;
-        }
-        section {
-            background: #ffffff;
-            margin: 15px;
-            padding: 15px;
-            border-radius: 10px;
-        }
-        section h2 {
-            margin-top: 0;
-            font-size: 18px;
-            color: #007bff;
-        }
-        section ul {
-            padding-right: 20px;
-        }
-        section ul li {
-            margin-bottom: 10px;
-        }
-        details {
-            margin-bottom: 10px;
-        }
-        summary {
-            cursor: pointer;
-            font-weight: bold;
-        }
-        footer {
-            background: #ffffff;
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-            border-top: 1px solid #ddd;
-        }
-        footer p {
-            margin: 5px 0;
-        }
-
-        /* Responsive adjustments */
-        @media (min-width: 768px) {
-            .search-form {
-                max-width: 500px;
-                margin: 20px auto;
-            }
-            section {
-                max-width: 600px;
-                margin: 20px auto;
-            }
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    <h1>بیلیتو</h1>
-</header>
-
-<div class="hero">
-    بیمه مسافرتی
-</div>
-
-<div class="search-form">
-    <form>
-        <input type="text" placeholder="کشور مقصد" />
-        <select>
-            <option>مدت سفر</option>
-            <option>1 تا 7 روز</option>
-            <option>8 تا 15 روز</option>
-        </select>
-        <select>
-            <option>تعداد مسافران</option>
-            <option>1 نفر</option>
-            <option>2 نفر</option>
-        </select>
-        <button type="submit">جستجو 🔍</button>
-    </form>
-</div>
-
-<section>
-    <h2>بیمه مسافرتی چیست؟</h2>
-    <p>بیمه مسافرتی نوعی پوشش مالی برای مشکلات پیش‌بینی‌نشده در طول سفر است که شامل خدمات درمانی، گم‌شدن چمدان، کنسلی و غیره می‌باشد.</p>
-</section>
-
-<section>
-    <h2>خدمات بیمه مسافرتی</h2>
-    <ul>
-        <li>هزینه‌های پزشکی و بستری</li>
-        <li>هزینه‌های دندانپزشکی</li>
-        <li>پرداخت هزینه داروهای اضطراری</li>
-        <li>هزینه بازگرداندن بیمار یا جسد</li>
-        <li>جبران خسارت مدارک یا اموال گمشده</li>
-    </ul>
-</section>
-
-<section>
-    <h2>مبلغ بیمه</h2>
-    <p>هزینه بیمه به عواملی مثل مقصد سفر، مدت زمان، سن مسافر و تعداد افراد بستگی دارد. بیمه‌های طولانی‌تر یا برای سنین بالاتر معمولا گران‌تر هستند.</p>
-</section>
-
-<section>
-    <h2>سوالات متداول</h2>
-    <details>
-        <summary>آیا بیمه مسافرتی خسارت خودرو را پوشش می‌دهد؟</summary>
-        <p>خیر، بیمه مسافرتی خودرو را شامل نمی‌شود. این مورد تحت پوشش بیمه بدنه یا ثالث است.</p>
-    </details>
-    <details>
-        <summary>نرخ بلیط برای نوزادان چطور است؟</summary>
-        <p>برای نوزادان زیر 2 سال معمولا بلیط ارزان‌تر با شرایط خاص در نظر گرفته می‌شود.</p>
-    </details>
-    <details>
-        <summary>آیا امکان استرداد بلیط وجود دارد؟</summary>
-        <p>بله، بسته به قوانین شرکت هواپیمایی، امکان لغو وجود دارد.</p>
-    </details>
-    <details>
-        <summary>آیا امکان تغییر نام وجود دارد؟</summary>
-        <p>در برخی موارد بله. باید با پشتیبانی تماس بگیرید.</p>
-    </details>
-</section>
-
-<footer>
-    <p>اپلیکیشن بیلیتو | <strong>Apple Store</strong> | <strong>Play Store</strong></p>
-    <p><a href="#">درباره ما</a> | <a href="#">تماس با ما</a> | <a href="#">قوانین و مقررات</a></p>
-    <p>پشتیبانی: 021-32765498 | ایمیل: shiva.arghvni1996@gmail.com</p>
-</footer>
-
-</body>
-</html>
