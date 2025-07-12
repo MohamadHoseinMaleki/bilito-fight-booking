@@ -78,10 +78,15 @@
 <body class="bg-white">
 
 <!-- ===== header (بازطراحی شده برای ریسپانسیو) ===== -->
+<!-- کد جدید و اصلاح شده برای هدر -->
+<!-- کد جدید و نهایی برای هدر -->
+<!-- کد جدید و نهایی برای هدر با هر دو منوی کشویی -->
 <header class="bg-white shadow-sm border-b border-gray-100">
     <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- هدر دسکتاپ (مخفی در موبایل) -->
+
+        <!-- ===== هدر دسکتاپ (بدون تغییر) ===== -->
         <div class="hidden md:flex items-center justify-between h-24">
+            <!-- محتوای هدر دسکتاپ شما بدون تغییر -->
             <div class="flex items-center">
                 <a href="#"><img src="../../pictuers/LOGO.png" alt="لوگوی بیلیتو" class="h-10 w-auto"></a>
                 <nav class="flex items-center space-x-8 space-x-reverse mr-8">
@@ -100,20 +105,62 @@
                         <span>۴۰۴۵_۰۲۱ پشتیبانی</span>
                         <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 6.75z" /></svg>
                     </div>
-                    <a href="#" class="bg-[#1D91CC] text-white px-5 py-2.5 rounded-lg flex items-center gap-x-2 font-semibold hover:bg-[#1982b6] transition-colors">
+                    <a href="#" id="loginButton" class="bg-[#1D91CC] text-white px-5 py-2.5 rounded-lg flex items-center gap-x-2 font-semibold hover:bg-[#1982b6] transition-colors">
                         <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>
                         <span>ورود/ ثبت نام</span>
                     </a>
                 </div>
             </div>
         </div>
-        <!-- هدر موبایل (نمایش فقط در موبایل) -->
+
+        <!-- ===== هدر موبایل ===== -->
         <div class="flex md:hidden items-center justify-between h-20">
-            <button type="button" class="text-gray-500 p-2"><svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg></button>
+            <!-- دکمه همبرگری (سمت راست) -->
+            <button id="hamburger-button" type="button" class="text-gray-500 p-2 z-50">
+                <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+            </button>
+
             <a href="#"><img src="../../pictuers/LOGO.png" alt="لوگوی بیلیتو" class="h-9 w-auto"></a>
-            <button type="button" class="text-gray-500 border rounded-full p-1.5"><svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg></button>
+
+            <!-- دکمه آدمک (سمت چپ) -->
+            <button id="profile-menu-button" type="button" class="text-gray-500 border rounded-full p-1.5 z-50">
+                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>
+            </button>
+        </div>
+
+    </div>
+
+    <!-- ===== منوی کشویی اصلی (از راست) ===== -->
+    <div id="main-menu" class="fixed top-0 right-0 w-3/4 max-w-sm h-screen bg-white shadow-lg p-6 transform translate-x-full transition-transform duration-300 ease-in-out z-40">
+        <nav class="flex flex-col space-y-6 pt-16">
+            <a href="#" class="text-gray-800 font-bold text-lg p-2 rounded-md hover:bg-gray-100">صفحه اصلی</a>
+            <a href="#" class="text-gray-700 hover:text-gray-900 text-lg p-2 rounded-md hover:bg-gray-100">بیمه مسافرتی</a>
+            <a href="#" class="text-gray-700 hover:text-gray-900 text-lg p-2 rounded-md hover:bg-gray-100">سفرهای من</a>
+            <a href="#" class="text-gray-700 hover:text-gray-900 text-lg p-2 rounded-md hover:bg-gray-100">سایر موارد</a>
+        </nav>
+    </div>
+
+    <!-- ===== منوی کشویی پروفایل (از چپ) ===== -->
+    <div id="profile-menu" class="fixed top-0 left-0 w-3/4 max-w-sm h-screen bg-white shadow-lg p-6 transform -translate-x-full transition-transform duration-300 ease-in-out z-40">
+        <div class="flex flex-col space-y-4 pt-16">
+            <a href="#" class="flex items-center gap-x-3 p-3 rounded-lg hover:bg-gray-100">
+                <svg class="w-6 h-6 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                <span id="profile-name-display" class="font-semibold text-gray-800">پروفایل</span>
+            </a>
+            <hr>
+            <a href="#" class="flex items-center gap-x-3 p-3 rounded-lg hover:bg-gray-100">
+                <svg class="w-6 h-6 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.438.995a6.427 6.427 0 010 .255c0 .382.145.755.438.995l1.003.827c.446.368.592.984.26 1.431l-1.296 2.247a1.125 1.125 0 01-1.37.49l-1.217-.456c-.354-.133-.75-.072-1.075.124a6.57 6.57 0 01-.22.127c-.332.183-.582.495-.645.87l-.213 1.281c-.09.543-.56.941-1.11.941h-2.593c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.063-.374-.313-.686-.645-.87a6.52 6.52 0 01-.22-.127c-.324-.196-.72-.257-1.075-.124l-1.217.456a1.125 1.125 0 01-1.37-.49l-1.296-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.437-.995a6.427 6.427 0 010-.255c0-.382-.145-.755-.438-.995l-1.004-.827a1.125 1.125 0 01-.26-1.431l1.296-2.247a1.125 1.125 0 011.37-.49l1.217.456c.354.133.75.072 1.075.124a6.57 6.57 0 01.22-.127c.332.183.582.495-.645.87l.213-1.281z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                <span>تنظیمات</span>
+            </a>
+            <a href="#" class="flex items-center gap-x-3 p-3 rounded-lg text-red-500 hover:bg-red-50">
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" /></svg>
+                <span>خروج</span>
+            </a>
         </div>
     </div>
+
+    <!-- ===== پس‌زمینه تیره مشترک (Overlay) ===== -->
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden"></div>
 </header>
 
 <main>
@@ -125,50 +172,68 @@
         <!-- آدرس تصویر دسکتاپ خود را در src زیر قرار دهید -->
         <img src="../../pictuers/STATE=Insurance, Device=web, SIZE=340.HOME PAGE.png" alt="بنر بیمه مسافرتی دسکتاپ" class="hidden md:block w-full h-[360px] object-cover">
 
-
         <!-- تصویر برای موبایل (در دسکتاپ مخفی است) -->
-        <img src="../../pictuers/STATE=Insurance, Device=mob, SIZE=100. searchbox.png" alt="بیمه مسافرتی موبایل" class="block md:hidden w-full h-[360px]">
-
+        <img src="../../pictuers/STATE=Insurance, Device=mob, SIZE=100. searchbox.png" alt="بیمه مسافرتی موبایل" class="block md:hidden w-full h-48">
+        <img class="block md:hidden h-[200px]">
         <!-- ===== باکس جستجو ===== -->
         <div class="absolute bottom-[-150px] md:bottom-[-44px] left-1/2 -translate-x-1/2 w-full max-w-[1205px] h-auto md:h-[88px] bg-white border border-[#EDEDED] rounded-lg search-box-shadow p-4 md:p-6 flex items-center">
 
-            <!--
-              تغییرات:
-              1. grid-cols-1 md:grid-cols-4: در موبایل تک ستونه، در دسکتاپ چهار ستونه.
-              2. gap-4: فاصله بین همه آیتم‌ها (هم عمودی و هم افقی).
-            -->
             <div class="grid grid-cols-1 md:grid-cols-4 gap-4 w-full">
 
+                <!-- ===== عنوان "بیمه مسافرتی" - فقط در موبایل نمایش داده می‌شود ===== -->
+                <div class="w-full text-right mb-4 md:hidden">
+                    <a href="#" class="text-[#1D91CC] font-semibold text-lg">بیمه مسافرتی</a>
+                </div>
 
-                <!-- فیلد ۱: کشور مقصد -->
+                <!-- فیلد ۱: کشور مبدا -->
                 <div class="relative">
-                    <label class="absolute -top-2 right-3 text-xs text-gray-500 bg-white px-1">کشور مقصد</label>
-                    <div class="flex items-center border border-gray-300 rounded-lg p-2.5 h-[52px]">
-                        <input type="text" value="استانبول" class="w-full bg-transparent focus:outline-none font-semibold text-gray-800">
+                    <label class="hidden md:block absolute -top-2 right-3 text-xs text-gray-500 bg-white px-1 z-10">کشور مبدا</label>
+                    <div id="destination-trigger" class="flex items-center justify-between border border-gray-300 rounded-lg p-2.5 h-[52px] cursor-pointer">
+                        <span id="destination-display" class="font-semibold text-gray-800">کشور مبدا</span>
+                        <svg class="w-5 h-5 text-gray-400 md:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" /></svg>
                     </div>
+                    <ul id="destination-menu" class="absolute top-full mt-2 w-full bg-white border border-gray-200 rounded-lg shadow-lg max-h-60 overflow-y-auto z-20 hidden">
+                        <li class="p-3 text-gray-400 cursor-default">کشور مبدا</li>
+                        <li data-value="ایران" class="p-3 hover:bg-gray-100 cursor-pointer">ایران</li>
+                        <li data-value="ترکیه" class="p-3 hover:bg-gray-100 cursor-pointer">ترکیه</li>
+                        <li data-value="امارات" class="p-3 hover:bg-gray-100 cursor-pointer">امارات</li>
+                    </ul>
                 </div>
 
                 <!-- فیلد ۲: مدت سفر -->
                 <div class="relative">
-                    <label class="absolute -top-2 right-3 text-xs text-gray-500 bg-white px-1">مدت سفر</label>
-                    <div class="flex items-center border border-gray-300 rounded-lg p-2.5 h-[52px]">
-                        <input type="text" value="۵ تا ۸ روز" class="w-full bg-transparent focus:outline-none font-semibold text-gray-800">
+                    <label class="hidden md:block absolute -top-2 right-3 text-xs text-gray-500 bg-white px-1 z-10">مدت سفر</label>
+                    <div id="duration-trigger" class="flex items-center justify-between border border-gray-300 rounded-lg p-2.5 h-[52px] cursor-pointer">
+                        <span id="duration-display" class="font-semibold text-gray-800">مدت سفر</span>
+                        <svg class="w-5 h-5 text-gray-400 md:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" /></svg>
                     </div>
+                    <ul id="duration-menu" class="absolute top-full mt-2 w-full bg-white border border-gray-200 rounded-lg shadow-lg max-h-60 overflow-y-auto z-20 hidden">
+                        <li class="p-3 text-gray-400 cursor-default">مدت سفر</li>
+                        <li data-value="۱ تا ۴ روز" class="p-3 hover:bg-gray-100 cursor-pointer">۱ تا ۴ روز</li>
+                        <li data-value="۵ تا ۸ روز" class="p-3 hover:bg-gray-100 cursor-pointer">۵ تا ۸ روز</li>
+                        <li data-value="۹ تا ۱۵ روز" class="p-3 hover:bg-gray-100 cursor-pointer">۹ تا ۱۵ روز</li>
+                    </ul>
                 </div>
 
                 <!-- فیلد ۳: مسافران -->
                 <div class="relative">
-                    <label class="absolute -top-2 right-3 text-xs text-gray-500 bg-white px-1">مسافران</label>
-                    <div class="flex items-center border border-gray-300 rounded-lg p-2.5 h-[52px]">
-                        <input type="text" value="۱ مسافر" class="w-full bg-transparent focus:outline-none font-semibold text-gray-800">
+                    <label class="hidden md:block absolute -top-2 right-3 text-xs text-gray-500 bg-white px-1 z-10">مسافران</label>
+                    <div id="passengers-trigger" class="flex items-center justify-between border border-gray-300 rounded-lg p-2.5 h-[52px] cursor-pointer">
+                        <span id="passengers-display" class="font-semibold text-gray-800">مسافران</span>
+                        <svg class="w-5 h-5 text-gray-400 md:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" /></svg>
                     </div>
+                    <ul id="passengers-menu" class="absolute top-full mt-2 w-full bg-white border border-gray-200 rounded-lg shadow-lg max-h-60 overflow-y-auto z-20 hidden">
+                        <li class="p-3 text-gray-400 cursor-default">مسافران</li>
+                        <li data-value="۱ مسافر" class="p-3 hover:bg-gray-100 cursor-pointer">۱ مسافر</li>
+                        <li data-value="۲ مسافر" class="p-3 hover:bg-gray-100 cursor-pointer">۲ مسافر</li>
+                        <li data-value="۳ مسافر" class="p-3 hover:bg-gray-100 cursor-pointer">۳ مسافر</li>
+                    </ul>
                 </div>
 
-                <!-- دکمه جستجو -->
-                <!-- mt-2 md:mt-0 برای ایجاد فاصله فقط در موبایل -->
-                <div class="mt-2 md:mt-0">
-                    <button class="bg-[#1D91CC] text-white w-full h-[52px] rounded-lg flex items-center justify-center gap-x-2 font-bold hover:bg-[#1982b6] transition-colors">
-                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" /></svg>
+                <!-- دکمه جستجو (با ارتفاع واکنش‌گرا) -->
+                <div class="mt-0 md:mr-14 ">
+                    <button id="searchButton" class="bg-[#1D91CC] text-white w-full h-[52px] md:w-56 h-6 rounded-lg flex flex-row-reverse items-center justify-center gap-x-2 font-bold hover:bg-[#1982b6] transition-colors px-10">
+                        <svg class="w-5 h-5 lg:w-4 lg:h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" /></svg>
                         <span>جستجو</span>
                     </button>
                 </div>
@@ -259,15 +324,15 @@
     <section class="pt-0 pb-0 mt-[-64px]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <div class="bg-[#E8F4FA] rounded-lg flex flex-col md:flex-row items-center overflow-hidden">
+            <div class="bg-[#E8F4FA] rounded-lg flex flex-col md:flex-row items-center overflow-hidden p-6 md:p-0">
 
                 <!-- ستون تصویر -->
-                <div class="p-0 md:p-0 md:order-1">
+                <div class="w-3/4 mx-auto mt-8 order-last md:w-auto md:mx-0 md:mt-0 md:order-1">
                     <img src="../../pictuers/Passport.png" alt="پاسپورت و هواپیما" >
                 </div>
 
                 <!-- جدول -->
-                <div class="flex-1 p-6 md:p-8 w-full">
+                <div class="flex-1 w-full order-first md:order-none md:p-8">
                     <table class="w-full text-center border border-gray-400/30">
                         <thead class="bg-[#D0E9F5]">
                         <tr>
@@ -614,6 +679,356 @@
                 }
             });
         }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const dropdowns = [
+            {
+                trigger: document.getElementById('destination-trigger'),
+                menu: document.getElementById('destination-menu'),
+                display: document.getElementById('destination-display'),
+                key: 'destination'
+            },
+            {
+                trigger: document.getElementById('duration-trigger'),
+                menu: document.getElementById('duration-menu'),
+                display: document.getElementById('duration-display'),
+                key: 'duration'
+            },
+            {
+                trigger: document.getElementById('passengers-trigger'),
+                menu: document.getElementById('passengers-menu'),
+                display: document.getElementById('passengers-display'),
+                key: 'passengers'
+            }
+        ];
+
+        const saveSelections = () => {
+            const selections = {
+                destination: dropdowns[0].display.textContent,
+                duration: dropdowns[1].display.textContent,
+                passengers: dropdowns[2].display.textContent
+            };
+            localStorage.setItem('travelSelections', JSON.stringify(selections));
+        };
+
+        const toggleMenu = (targetMenu) => {
+            dropdowns.forEach(({ menu }) => {
+                if (menu !== targetMenu) {
+                    menu.classList.add('hidden');
+                }
+            });
+            targetMenu.classList.toggle('hidden');
+        };
+
+        dropdowns.forEach(({ trigger, menu, display }) => {
+            trigger.addEventListener('click', (event) => {
+                event.stopPropagation();
+                toggleMenu(menu);
+            });
+
+            // *** تنها تغییر در این قسمت است ***
+            // حالا فقط آیتم‌هایی که 'data-value' دارند قابل انتخاب هستند
+            menu.addEventListener('click', (event) => {
+                const targetLi = event.target.closest('li');
+                if (targetLi && targetLi.hasAttribute('data-value')) {
+                    const selectedValue = targetLi.getAttribute('data-value');
+                    display.textContent = selectedValue;
+                    menu.classList.add('hidden');
+                    saveSelections();
+                }
+            });
+        });
+
+        window.addEventListener('click', () => {
+            dropdowns.forEach(({ menu }) => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        const loadSelections = () => {
+            const savedSelections = localStorage.getItem('travelSelections');
+            if (savedSelections) {
+                const selections = JSON.parse(savedSelections);
+                dropdowns.forEach(({ display, key }) => {
+                    // چک می‌کنیم که مقدار ذخیره شده با مقدار پیش‌فرض یکی نباشد
+                    const defaultValue = {
+                        destination: "کشور مبدا",
+                        duration: "مدت سفر",
+                        passengers: "مسافران"
+                    };
+                    if (selections[key] && selections[key] !== defaultValue[key]) {
+                        display.textContent = selections[key];
+                    }
+                });
+            }
+        };
+
+        loadSelections();
+
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+        // تعریف المان‌های هر دراپ‌داون
+        const dropdowns = [
+            {
+                trigger: document.getElementById('destination-trigger'),
+                menu: document.getElementById('destination-menu'),
+                display: document.getElementById('destination-display'),
+                key: 'destination',
+                defaultValue: 'کشور مبدا' // مقدار پیش‌فرض
+            },
+            {
+                trigger: document.getElementById('duration-trigger'),
+                menu: document.getElementById('duration-menu'),
+                display: document.getElementById('duration-display'),
+                key: 'duration',
+                defaultValue: 'مدت سفر' // مقدار پیش‌فرض
+            },
+            {
+                trigger: document.getElementById('passengers-trigger'),
+                menu: document.getElementById('passengers-menu'),
+                display: document.getElementById('passengers-display'),
+                key: 'passengers',
+                defaultValue: 'مسافran' // مقدار پیش‌فرض
+            }
+        ];
+
+        // پیدا کردن دکمه جستجو
+        const searchButton = document.getElementById('searchButton');
+
+        // ... (کدهای مربوط به باز و بسته شدن منوها بدون تغییر باقی می‌مانند) ...
+        const saveSelections = () => { /* ... */ };
+        const toggleMenu = (targetMenu) => { /* ... */ };
+        dropdowns.forEach(({ trigger, menu, display }) => {
+            trigger.addEventListener('click', (event) => {
+                event.stopPropagation();
+                toggleMenu(menu);
+            });
+            menu.addEventListener('click', (event) => {
+                const targetLi = event.target.closest('li');
+                if (targetLi && targetLi.hasAttribute('data-value')) {
+                    display.textContent = targetLi.getAttribute('data-value');
+                    menu.classList.add('hidden');
+                    // saveSelections(); // در اینجا دیگر نیازی به ذخیره نیست
+                }
+            });
+        });
+        window.addEventListener('click', () => { /* ... */ });
+        const loadSelections = () => { /* ... */ };
+        // loadSelections(); // این بخش‌ها را برای سادگی موقتاً غیرفعال می‌کنیم
+
+        // ==========================================================
+        // ===== بخش جدید و مهم: منطق کلیک دکمه جستجو =====
+        // ==========================================================
+
+        searchButton.addEventListener('click', function(event) {
+            event.preventDefault(); // جلوگیری از رفتار پیش‌فرض دکمه
+
+            let allFieldsSelected = true; // فرض می‌کنیم همه فیلدها انتخاب شده‌اند
+
+            // بررسی هر فیلد
+            dropdowns.forEach(dropdown => {
+                // اگر مقدار فعلی با مقدار پیش‌فرض یکی بود، یعنی انتخاب نشده است
+                if (dropdown.display.textContent === dropdown.defaultValue) {
+                    allFieldsSelected = false;
+                }
+            });
+
+            // تصمیم‌گیری بر اساس نتیجه بررسی
+            if (allFieldsSelected) {
+                // اگر همه فیلدها انتخاب شده‌اند
+                alert('در صورت داشتن بلیط به صفحه پرداخت منتقل خواهید شد، در غیر این صورت برای بازه زمان دیگر تلاش بفرمایید.');
+                // در اینجا می‌توانید داده‌ها را در localStorage هم ذخیره کنید
+            } else {
+                // اگر حداقل یکی از فیلدها انتخاب نشده باشد
+                alert('لطفا تمام فیلدها را انتخاب کنید.');
+            }
+        });
+    });
+
+    // توابع کمکی که در کد بالا استفاده شده‌اند (بدون تغییر)
+    // این توابع را می‌توانید خارج از 'DOMContentLoaded' هم قرار دهید
+    // اما برای انسجام، داخل آن نگه می‌داریم
+    function saveSelections() {
+        const dropdowns = [
+            { display: document.getElementById('destination-display') },
+            { display: document.getElementById('duration-display') },
+            { display: document.getElementById('passengers-display') },
+        ];
+        const selections = {
+            destination: dropdowns[0].display.textContent,
+            duration: dropdowns[1].display.textContent,
+            passengers: dropdowns[2].display.textContent
+        };
+        localStorage.setItem('travelSelections', JSON.stringify(selections));
+    }
+    function toggleMenu(targetMenu) {
+        document.querySelectorAll('ul[id$="-menu"]').forEach(menu => {
+            if (menu !== targetMenu) {
+                menu.classList.add('hidden');
+            }
+        });
+        targetMenu.classList.toggle('hidden');
+    }
+    function loadSelections() {
+        const savedSelections = localStorage.getItem('travelSelections');
+        if (savedSelections) {
+            const selections = JSON.parse(savedSelections);
+            if (selections.destination) document.getElementById('destination-display').textContent = selections.destination;
+            if (selections.duration) document.getElementById('duration-display').textContent = selections.duration;
+            if (selections.passengers) document.getElementById('passengers-display').textContent = selections.passengers;
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+        // دکمه را با استفاده از ID آن پیدا می‌کنیم
+        const loginButton = document.getElementById('loginButton');
+
+        // یک "شنونده رویداد" برای کلیک روی دکمه اضافه می‌کنیم
+        loginButton.addEventListener('click', function(event) {
+
+            // از رفتار پیش‌فرض لینک (رفتن به بالای صفحه) جلوگیری می‌کند
+            event.preventDefault();
+
+            // نام کاربری را از localStorage می‌خوانیم
+            // فرض می‌کنیم نام کاربری با کلید 'username' ذخیره شده است
+            const username = localStorage.getItem('username');
+
+            // بررسی می‌کنیم که آیا نام کاربری وجود دارد یا نه
+            if (username) {
+                // اگر نام وجود داشت، پیام خوشامدگویی را نمایش می‌دهیم
+                alert('خوش آمدی, ' + username + '!');
+            } else {
+                // اگر نامی وجود نداشت، یک پیام دیگر نمایش می‌دهیم
+                alert('کاربری یافت نشد. لطفا ابتدا ثبت نام کنید.');
+            }
+        });
+
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+        // تابع اصلی برای مدیریت کلیک ورود/ثبت‌نام
+        function handleLoginClick(event) {
+            // جلوگیری از رفتار پیش‌فرض لینک یا دکمه
+            event.preventDefault();
+
+            // خواندن نام کاربری از localStorage
+            const username = localStorage.getItem('username');
+
+            // بررسی و نمایش پیام مناسب
+            if (username) {
+                alert('خوش آمدی, ' + username + '!');
+            } else {
+                alert('کاربری یافت نشد. لطفا ابتدا ثبت نام کنید.');
+            }
+        }
+
+        // پیدا کردن هر دو دکمه
+        const desktopLoginButton = document.getElementById('loginButton');
+        const mobileLoginButton = document.getElementById('mobileLoginButton');
+
+        // اضافه کردن رویداد کلیک به دکمه دسکتاپ (اگر وجود داشت)
+        if (desktopLoginButton) {
+            desktopLoginButton.addEventListener('click', handleLoginClick);
+        }
+
+        // اضافه کردن رویداد کلیک به دکمه موبایل (اگر وجود داشت)
+        if (mobileLoginButton) {
+            mobileLoginButton.addEventListener('click', handleLoginClick);
+        }
+
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+        const overlay = document.getElementById('overlay');
+
+        // ===================================================
+        // ===== منطق منوی اصلی (همبرگری - از راست) =====
+        // ===================================================
+        const hamburgerButton = document.getElementById('hamburger-button');
+        const mainMenu = document.getElementById('main-menu');
+
+        function toggleMainMenu() {
+            mainMenu.classList.toggle('translate-x-full');
+            overlay.classList.toggle('hidden');
+        }
+
+        if (hamburgerButton && mainMenu) {
+            hamburgerButton.addEventListener('click', () => {
+                // اگر منوی دیگر باز است، اول آن را ببند
+                if (!profileMenu.classList.contains('-translate-x-full')) {
+                    toggleProfileMenu();
+                }
+                toggleMainMenu();
+            });
+        }
+
+        // ===================================================
+        // ===== منطق منوی پروفایل (آدمک - از چپ) =====
+        // ===================================================
+        const profileMenuButton = document.getElementById('profile-menu-button');
+        const profileMenu = document.getElementById('profile-menu');
+        const profileNameDisplay = document.getElementById('profile-name-display');
+
+        function toggleProfileMenu() {
+            profileMenu.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+        }
+
+        if (profileMenuButton && profileMenu) {
+            profileMenuButton.addEventListener('click', () => {
+                // اگر منوی دیگر باز است، اول آن را ببند
+                if (!mainMenu.classList.contains('translate-x-full')) {
+                    toggleMainMenu();
+                }
+
+                // نام کاربر را از localStorage بخوان و نمایش بده
+                const username = localStorage.getItem('username');
+                if (username) {
+                    profileNameDisplay.textContent = username;
+                } else {
+                    profileNameDisplay.textContent = 'پروفایل سید حسین حسینی'; // یا کاربر مهمان
+                }
+                toggleProfileMenu();
+            });
+        }
+
+        // ===================================================
+        // ===== منطق بستن منوها با Overlay =====
+        // ===================================================
+        if (overlay) {
+            overlay.addEventListener('click', () => {
+                if (!mainMenu.classList.contains('translate-x-full')) {
+                    toggleMainMenu();
+                }
+                if (!profileMenu.classList.contains('-translate-x-full')) {
+                    toggleProfileMenu();
+                }
+            });
+        }
+
+        // ===================================================
+        // ===== منطق دکمه ورود/ثبت‌نام فقط برای دسکتاپ =====
+        // ===================================================
+        const desktopLoginButton = document.getElementById('loginButton');
+        if (desktopLoginButton) {
+            desktopLoginButton.addEventListener('click', (event) => {
+                event.preventDefault();
+                const username = localStorage.getItem('username');
+                if (username) {
+                    alert('خوش آمدی, ' + username + '!');
+                } else {
+                    alert('کاربری یافت نشد. لطفا ابتدا ثبت نام کنید.');
+                }
+            });
+        }
+
     });
 </script>
 </body>
